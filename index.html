@@ -6,25 +6,6 @@
 <title>Ultimate 1040 Tax Guide | IRS Instructions & All Schedules</title>
 <meta name="description" content="Step-by-step IRS-based guide for first-time filers. Covers Form 1040, Schedules 1–3, C, SE, E, and includes official instructions, examples, tips, and PDFs.">
 <meta name="keywords" content="1040 guide, IRS instructions, first-time filer, Schedule 1, Schedule 2, Schedule 3, Schedule C, Schedule SE, Schedule E, Form 8863, Form 8880, Form 8962, how to file taxes, e-file.com, tax education">
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"HowTo",
-  "name":"Ultimate First-Time Filer 1040 Guide with IRS Instructions",
-  "description":"Comprehensive step-by-step guide covering IRS Form 1040 and schedules with official instructions, examples, and tips.",
-  "step":[
-    {"@type":"HowToStep","name":"Determine Filing Status","text":"Choose correct filing status to maximize deductions and credits."},
-    {"@type":"HowToStep","name":"Enter Personal Info","text":"Provide legal name, SSN, address, and dependents."},
-    {"@type":"HowToStep","name":"Form 1040: Top Lines 1–6","text":"Enter wages, interest, dividends, and other income, following IRS rules."},
-    {"@type":"HowToStep","name":"Report Income & Schedules","text":"Complete Schedules 1–3 for additional income, adjustments, and credits."},
-    {"@type":"HowToStep","name":"Self-Employment & Rental Income","text":"Use Schedules C, SE, and E to calculate net income and taxes."},
-    {"@type":"HowToStep","name":"Education & Retirement Credits","text":"Apply Forms 8863, 8880, 8962 for eligible credits."},
-    {"@type":"HowToStep","name":"Review & Submit","text":"Verify entries, attach forms, sign, and submit via e-file.com."}
-  ]
-}
-</script>
-
 <style>
 body {font-family:'Segoe UI',sans-serif;margin:0;background:#f9fafb;color:#222;line-height:1.6;}
 header{background:#1e3c72;color:white;text-align:center;padding:30px 15px;}
@@ -63,8 +44,11 @@ footer{text-align:center;padding:15px;font-size:13px;color:#555;margin-top:20px;
 </header>
 
 <div class="container">
+<!-- Current Date & Countdown Clock -->
+<div id="date-time" style="text-align:center;margin-bottom:15px;font-size:16px;color:#1e3c72;"></div>
+<div id="deadline-clock" style="text-align:center;margin-bottom:20px;font-size:18px;font-weight:bold;color:#dc3545;"></div>
 
-<!-- TOC -->
+<!-- Table of Contents -->
 <div class="toc">
 <h2>Table of Contents</h2>
 <a href="#step1">1. Determine Filing Status</a>
@@ -80,8 +64,14 @@ footer{text-align:center;padding:15px;font-size:13px;color:#555;margin-top:20px;
 <div class="step" id="step1">
 <h2><span>1</span> Determine Filing Status</h2>
 <p>Choose the correct filing status to maximize deductions and credits.</p>
-<div class="instruction-box">
-IRS Instructions: Your filing status determines your standard deduction, tax rates, and eligibility for credits. ([irs.gov](https://www.irs.gov/instructions/i1040gi/ar02.html))
+<div class="tip-box">
+<h3>Daily Tax Tips:</h3>
+<ul>
+<li>Keep track of dependents and eligibility.</li>
+<li>Consider head of household if qualifying.</li>
+<li>Review prior year filing status.</li>
+<li>Consult IRS rules if unsure.</li>
+</ul>
 </div>
 <a class="back-to-top" href="#top">Back to Top ↑</a>
 </div>
@@ -90,17 +80,44 @@ IRS Instructions: Your filing status determines your standard deduction, tax rat
 <div class="step" id="step2">
 <h2><span>2</span> Enter Personal Info</h2>
 <p>Provide legal name, SSN, address, and dependents.</p>
-<div class="instruction-box">
-IRS Notes: Include all dependents and their SSNs to claim credits like the Child Tax Credit. ([irs.gov](https://www.irs.gov/instructions/i1040gi/ar03.html))
+<div class="tip-box">
+<h3>Daily Tax Tips:</h3>
+<ul>
+<li>Double-check SSN entries.</li>
+<li>Include full legal names of dependents.</li>
+<li>Verify addresses for IRS mailing.</li>
+<li>Use consistent formatting from prior returns.</li>
+</ul>
 </div>
 <a class="back-to-top" href="#top">Back to Top ↑</a>
 </div>
 
-<!-- Step 3: Top 1040 -->
+<!-- Step 3 -->
 <div class="step" id="step3">
-<h2><span>3</span> Form 1040: Top of Page 1 (Lines 1‑6)</h2>
-<p>Core income lines that feed into your total income. Official IRS rules included.</p>
-<!-- Visual and Instruction Boxes same as before -->
+<h2><span>3</span> Form 1040: Top Lines 1–6</h2>
+<p>Enter wages, salaries, tips, interest, dividends, and other income following IRS instructions.</p>
+<!-- Line 1 example -->
+<button class="collapsible">Line 1: Wages, Salaries, Tips</button>
+<div class="content">
+<div class="visual">W-2 Box 1: $42,000 → Form 1040 line 1</div>
+<div class="instruction-box">Include all wages from W-2 forms. Do not include pre-tax 401k contributions.</div>
+</div>
+<!-- Line 2 example -->
+<button class="collapsible">Line 2: Taxable & Tax-Exempt Interest</button>
+<div class="content">
+<div class="visual">Taxable Interest: $500 → line 2b; Tax-Exempt: $100 → line 2a</div>
+<div class="instruction-box">Report interest from banks, bonds, CDs. Tax-exempt interest is reported but not taxed.</div>
+</div>
+<!-- Daily tips -->
+<div class="tip-box">
+<h3>Daily Tax Tips:</h3>
+<ul>
+<li>Organize W-2s and 1099s.</li>
+<li>Track interest and dividends.</li>
+<li>Use IRS instructions to avoid errors.</li>
+<li>Check for prior year carryovers.</li>
+</ul>
+</div>
 <a class="back-to-top" href="#top">Back to Top ↑</a>
 </div>
 
@@ -108,36 +125,105 @@ IRS Notes: Include all dependents and their SSNs to claim credits like the Child
 <div class="step" id="step4">
 <h2><span>4</span> Report Income & Schedules</h2>
 <p>Use Schedules 1–3 for additional income, adjustments, and credits.</p>
-<!-- Collapsibles same as before -->
+<button class="collapsible">Schedule 1: Additional Income & Adjustments</button>
+<div class="content">
+<div class="visual">Unemployment: $800; Gambling: $200; Educator Expenses: $250; Student Loan Interest: $500 → 1040 line 10</div>
+<div class="instruction-box">Schedule 1 captures income not on W-2 and adjustments.</div>
+</div>
+<button class="collapsible">Schedule 2: Additional Taxes</button>
+<div class="content">
+<div class="visual">Self-Employment Tax: $841.50; AMT: $0 → 1040 line 11</div>
+</div>
+<button class="collapsible">Schedule 3: Nonrefundable Credits</button>
+<div class="content">
+<div class="visual">Child Care: $300; Education Credits: $1,500; Retirement Savings Credit: $200 → 1040 line 15</div>
+</div>
+<div class="tip-box">
+<h3>Daily Tax Tips:</h3>
+<ul>
+<li>Keep receipts for all deductions.</li>
+<li>Check IRS thresholds for credits.</li>
+<li>File accurate amounts to avoid penalties.</li>
+<li>Use e-file for faster processing.</li>
+</ul>
+</div>
 <a class="back-to-top" href="#top">Back to Top ↑</a>
 </div>
 
 <!-- Step 5 -->
 <div class="step" id="step5">
 <h2><span>5</span> Self-Employment & Rental Income</h2>
-<p>Report business and rental income using Schedule C, SE, and E.</p>
-<!-- Collapsibles same as before -->
+<p>Use Schedules C, SE, and E to calculate net business and rental income.</p>
+<button class="collapsible">Schedule C: Business Income</button>
+<div class="content">
+<div class="visual">Gross: $8,000; Expenses: $2,500; Net Profit: $5,500 → 1040 line 8</div>
+</div>
+<button class="collapsible">Schedule SE: Self-Employment Tax</button>
+<div class="content">
+<div class="visual">Net Profit: $5,500; SE Tax: $841.50; Deductible Portion: $420.75 → 1040 line 10</div>
+</div>
+<button class="collapsible">Schedule E: Rental Income</button>
+<div class="content">
+<div class="visual">Rental Income: $6,000; Expenses: $1,800; Net: $4,200 → 1040 line 8</div>
+</div>
+<div class="tip-box">
+<h3>Daily Tax Tips:</h3>
+<ul>
+<li>Track business expenses monthly.</li>
+<li>Keep detailed rental property records.</li>
+<li>Separate personal and business accounts.</li>
+<li>Consult a CPA if unsure.</li>
+</ul>
+</div>
 <a class="back-to-top" href="#top">Back to Top ↑</a>
 </div>
 
 <!-- Step 6 -->
 <div class="step" id="step6">
 <h2><span>6</span> Education & Retirement Credits</h2>
-<!-- Collapsibles same as before -->
+<button class="collapsible">Form 8863: Education Credits</button>
+<div class="content">
+<div class="visual">American Opportunity: $1,000; Lifetime Learning: $500 → Schedule 3, line 3</div>
+</div>
+<button class="collapsible">Form 8880: Retirement Savings Credit</button>
+<div class="content">
+<div class="visual">IRA Contribution: $2,000; Credit: $200 → Schedule 3, line 4</div>
+</div>
+<button class="collapsible">Form 8962: Premium Tax Credit</button>
+<div class="content">
+<div class="visual">Health Insurance: $4,000; PTC Received: $3,000; Claim/Repay: $1,000 → 1040 line 17</div>
+</div>
+<div class="tip-box">
+<h3>Daily Tax Tips:</h3>
+<ul>
+<li>Keep tuition receipts and 1098-T forms.</li>
+<li>Check income limits for retirement credits.</li>
+<li>Use marketplace statements for premium tax credit.</li>
+<li>Claim all eligible education credits.</li>
+</ul>
+</div>
 <a class="back-to-top" href="#top">Back to Top ↑</a>
 </div>
 
 <!-- Step 7 -->
 <div class="step" id="step7">
 <h2><span>7</span> Review & Submit</h2>
-<p>Verify all entries, attach W‑2s/1099s, sign forms, and submit.</p>
+<p>Verify all entries, attach forms, sign, and submit.</p>
 <p style="text-align:center;">
-<a class="file-now" href="https://is.gd/2l1Jb4" target="_blank" rel="noopener noreferrer">Ready to e-File via e-file.com</a>
+<a class="file-now" href="https://www.e-file.com" target="_blank" rel="noopener noreferrer">Ready to e-File via e-file.com</a>
 </p>
-<p style="text-align:center;">
-<a class="file-now" href="sample-1040-guide.pdf" target="_blank">Download Full Sample 1040 & Schedules PDF</a>
-</p>
+<div class="tip-box">
+<h3>Daily Tax Tips:</h3>
+<ul>
+<li>Review each line carefully.</li>
+<li>Double-check Social Security numbers.</li>
+<li>Ensure all forms are attached.</li>
+<li>File electronically for speed and accuracy.</li>
+</ul>
+</div>
 <a class="back-to-top" href="#top">Back to Top ↑</a>
+</div>
+
 </div>
 
 <footer>
@@ -145,17 +231,51 @@ IRS Notes: Include all dependents and their SSNs to claim credits like the Child
 </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  var coll = document.getElementsByClassName("collapsible");
-  for (var i=0;i<coll.length;i++){
-    coll[i].addEventListener("click", function(){
+// Collapsible sections
+document.addEventListener("DOMContentLoaded", function(){
+  var coll=document.getElementsByClassName("collapsible");
+  for(var i=0;i<coll.length;i++){
+    coll[i].addEventListener("click",function(){
       this.classList.toggle("active");
-      var content = this.nextElementSibling;
+      var content=this.nextElementSibling;
       if(content.style.display==="block"){content.style.display="none";} 
-      else {content.style.display="block";}
+      else{content.style.display="block";}
     });
   }
 });
+
+// Current Date
+function showCurrentDate() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('date-time').textContent = now.toLocaleDateString(undefined, options);
+}
+
+// Countdown to deadlines
+let showStandardDeadline = true;
+function updateDeadlineClock() {
+    const now = new Date();
+    const standardDeadline = new Date(now.getFullYear(), 3, 15, 23, 59, 59);
+    const extensionDeadline = new Date(now.getFullYear(), 9, 15, 23, 59, 59);
+    const target = showStandardDeadline ? standardDeadline : extensionDeadline;
+    const diff = target - now;
+    if(diff > 0){
+        const days = Math.floor(diff / (1000*60*60*24));
+        const hours = Math.floor((diff / (1000*60*60)) % 24);
+        const minutes = Math.floor((diff / (1000*60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        document.getElementById('deadline-clock').textContent =
+            (showStandardDeadline ? "Tax Deadline Countdown: " : "Extension Deadline Countdown: ") +
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    } else {
+        document.getElementById('deadline-clock').textContent =
+            showStandardDeadline ? "Standard Tax Deadline Passed!" : "Tax Extension Deadline Passed!";
+    }
+}
+setInterval(() => { showStandardDeadline = !showStandardDeadline; }, 120000);
+setInterval(updateDeadlineClock, 1000);
+showCurrentDate();
+updateDeadlineClock();
 </script>
 
 </body>
