@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Easy 1040 Tax Guide – Step by Step for Beginners</title>
-<meta name="description" content="Learn how to fill out IRS Form 1040 step by step. Beginner-friendly guide with visuals, examples, and tips. Always up to date with IRS instructions.">
-<meta name="keywords" content="1040 form guide, how to fill 1040, IRS 1040 instructions, easy tax filing, beginner tax guide">
+<meta name="description" content="Learn how to fill out IRS Form 1040 step by step. Beginner-friendly guide with visuals, examples, tips, and live daily tax tips. Always up to date with IRS instructions.">
+<meta name="keywords" content="1040 form guide, how to fill 1040, IRS 1040 instructions, easy tax filing, beginner tax guide, daily tax tip">
 
 <style>
 body {
@@ -14,6 +14,7 @@ body {
   margin: 0;
   background: #f5f7fa;
   color: #333;
+  line-height: 1.6;
 }
 header {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
@@ -35,27 +36,40 @@ header p {
 }
 .step {
   margin: 30px 0;
-  padding: 20px;
-  border-radius: 8px;
-  background: #f9fbfd;
-  border-left: 6px solid #3498db;
+  padding: 25px;
+  border-radius: 10px;
+  background: #eef2f7;
+  border-left: 8px solid #3498db;
+}
+.step:nth-child(even) {
+  background: #f9f9f9;
+  border-left: 8px solid #27ae60;
 }
 .step h2 {
   margin-top: 0;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+.step h2 span {
+  margin-right: 10px;
+  font-size: 28px;
 }
 .visual {
-  background: #eef2f7;
+  background: #fff;
   padding: 15px;
   margin-top: 10px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-family: monospace;
   white-space: pre-line;
+  border: 1px solid #ccc;
 }
 .highlight {
   background: #fff3cd;
-  padding: 10px;
-  border-left: 4px solid #ffc107;
-  margin-top: 10px;
+  padding: 12px;
+  border-left: 5px solid #ffc107;
+  margin-top: 15px;
+  border-radius: 6px;
 }
 .cta {
   display: block;
@@ -66,15 +80,16 @@ header p {
   margin: 25px 0;
   text-decoration: none;
   font-size: 18px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: bold;
+  transition: 0.3s;
 }
 .cta:hover {
   background: #1e874b;
 }
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   font-size: 14px;
   color: #777;
 }
@@ -82,7 +97,7 @@ iframe {
   width: 100%;
   height: 500px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-top: 20px;
 }
 .tooltip {
@@ -92,7 +107,7 @@ iframe {
 }
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 200px;
+  width: 220px;
   background-color: #333;
   color: #fff;
   text-align: left;
@@ -102,7 +117,7 @@ iframe {
   z-index: 10;
   bottom: 125%;
   left: 50%;
-  margin-left: -100px;
+  margin-left: -110px;
   opacity: 0;
   transition: opacity 0.3s;
   font-size: 14px;
@@ -110,6 +125,15 @@ iframe {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+#dailyTipBox {
+  background:#fff3cd; 
+  border-left:4px solid #ffc107; 
+  padding:15px; 
+  margin:20px 0; 
+  border-radius:6px; 
+  font-weight:bold;
+  font-size:16px;
 }
 </style>
 </head>
@@ -123,8 +147,12 @@ iframe {
 
 <div class="container">
 
+<!-- Daily Tax Tip -->
+<div id="dailyTipBox">Loading today's tax tip...</div>
+
+<!-- Step 1 -->
 <div class="step" id="step1">
-<h2>Step 1: Gather Your Documents</h2>
+<h2><span>🗂</span> Step 1: Gather Documents</h2>
 <p>Before starting your 1040, gather:</p>
 <ul>
 <li>W-2 from your employer</li>
@@ -137,8 +165,9 @@ iframe {
 <a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 Get Started with Your Documents</a>
 </div>
 
+<!-- Step 2 -->
 <div class="step" id="step2">
-<h2>Step 2: Personal Information</h2>
+<h2><span>✏️</span> Step 2: Personal Information</h2>
 <p>Fill in your name, address, and filing status.</p>
 <div class="visual">
 Name: Jane Doe  
@@ -150,8 +179,9 @@ SSN: XXX-XX-0000
 </div>
 </div>
 
+<!-- Step 3 -->
 <div class="step" id="step3">
-<h2>Step 3: Report Your Income</h2>
+<h2><span>💵</span> Step 3: Report Your Income</h2>
 <p>Add all income sources to find your total income.</p>
 <div class="visual">
 W-2 Income: $40,000  
@@ -162,8 +192,9 @@ Total Income: $45,000
 <a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 Automatically Add Your Income</a>
 </div>
 
+<!-- Step 4 -->
 <div class="step" id="step4">
-<h2>Step 4: Adjust Income</h2>
+<h2><span>📊</span> Step 4: Adjust Income</h2>
 <p>Subtract adjustments like student loan interest or retirement contributions.</p>
 <div class="visual">
 Total Income: $45,000  
@@ -173,8 +204,9 @@ Adjusted Gross Income (<span class="tooltip">AGI<span class="tooltiptext">Your t
 </div>
 </div>
 
+<!-- Step 5 -->
 <div class="step" id="step5">
-<h2>Step 5: Take Deductions</h2>
+<h2><span>📉</span> Step 5: Take Deductions</h2>
 <p>Most beginners use the standard deduction to lower taxable income.</p>
 <div class="visual">
 AGI: $43,000  
@@ -184,20 +216,22 @@ Taxable Income: $29,150
 </div>
 </div>
 
+<!-- Step 6 -->
 <div class="step" id="step6">
-<h2>Step 6: Apply Credits</h2>
+<h2><span>💰</span> Step 6: Apply Credits</h2>
 <p>Credits reduce the amount of tax you owe.</p>
 <div class="visual">
 Tax: $3,200  
 Credits: -$1,000  
 ------------------  
-New Tax: $2,200 💰
+New Tax: $2,200
 </div>
 <a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 Calculate Your Tax Easily</a>
 </div>
 
+<!-- Step 7 -->
 <div class="step" id="step7">
-<h2>Step 7: Filing & Refund</h2>
+<h2><span>🎉</span> Step 7: Filing & Refund</h2>
 <p>Enter taxes already paid and see if you get a refund or owe money.</p>
 <div class="visual">
 Paid: $3,000  
@@ -208,21 +242,22 @@ Refund: $800 🎉
 <a class="cta" href="https://is.gd/pbLKhS" target="_blank">👉 File Your Taxes Now</a>
 </div>
 
-<!-- IRS Tutorial Video Embed -->
+<!-- Dynamic IRS Tutorial Video -->
 <div class="step" id="video-tutorial">
-<h2>Watch: How to Fill Out Form 1040</h2>
-<p>Click play to see a simple, step‑by‑step video:</p>
-<iframe width="100%" height="400"
-    src="https://www.youtube.com/embed/kp2nZSLo-Ac"
-    title="IRS Form 1040 Step-by-Step Guide"
+<h2><span>🎥</span> Watch: Latest 1040 Tutorial</h2>
+<p>The newest IRS Form 1040 video for this year will show below:</p>
+<iframe id="taxVideo" width="100%" height="400"
+    src=""
+    title="Latest IRS Form 1040 Tutorial"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
 </iframe>
 </div>
 
+<!-- Official IRS Instructions -->
 <div class="step" id="irs">
-<h2>Official IRS Instructions (Auto Updated)</h2>
+<h2><span>📄</span> Official IRS Instructions (Auto Updated)</h2>
 <p>Always see the latest IRS Form 1040 instructions below:</p>
 <iframe src="https://www.irs.gov/forms-pubs/about-form-1040"></iframe>
 </div>
@@ -232,6 +267,44 @@ Refund: $800 🎉
 <footer>
 <p>Educational purposes only. Not professional tax advice. Always verify with IRS.</p>
 </footer>
+
+<!-- JavaScript -->
+<script>
+// Daily Tax Tip
+const taxTips = [
+  "💡 Check your W-2 for correct Social Security numbers.",
+  "💡 Contribute to an IRA before the tax deadline for deductions.",
+  "💡 Keep receipts for work-related expenses you might deduct.",
+  "💡 Review your withholding to avoid surprises at tax time.",
+  "💡 Track your charitable donations for credits.",
+  "💡 File early to get your refund faster.",
+  "💡 Use tax software for step-by-step guidance.",
+  "💡 Make sure your bank info is correct for direct deposit."
+];
+const today = new Date();
+const tipIndex = today.getDate() % taxTips.length;
+document.getElementById('dailyTipBox').innerText = "Tip for today: " + taxTips[tipIndex];
+
+// Dynamic YouTube Video Placeholder (replace YOUR_API_KEY with your API key)
+async function loadLatestVideo() {
+  const API_KEY = "YOUR_API_KEY"; // <-- replace with your YouTube Data API key
+  const SEARCH_QUERY = "IRS Form 1040 tutorial " + new Date().getFullYear();
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=1&q=${encodeURIComponent(SEARCH_QUERY)}&key=${API_KEY}`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const videoId = data.items[0].id.videoId;
+    if (videoId) {
+      document.getElementById("taxVideo").src = `https://www.youtube.com/embed/${videoId}`;
+    }
+  } catch (err) {
+    console.error("Error loading video:", err);
+  }
+}
+
+// Uncomment below if you have a YouTube API key
+// loadLatestVideo();
+</script>
 
 </body>
 </html>
