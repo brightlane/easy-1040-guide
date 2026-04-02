@@ -6,9 +6,8 @@
     <title>Ultimate 1040 Tax Guide | IRS Instructions & All Schedules</title>
     <meta name="description" content="Step-by-step IRS-based guide for first-time filers. Covers Form 1040, Schedules 1–3, C, SE, and includes official instructions, examples, tips, and PDFs.">
     <meta name="keywords" content="1040 guide, IRS instructions, first-time filer, Schedule 1, Schedule 2, Schedule 3, Schedule C, Schedule SE, Schedule E, Form 8863, Form 8880, Form 8962, how to file taxes, e-file.com, tax education">
-    
+
     <style>
-        /* Minified CSS for performance */
         body{font-family:'Segoe UI',sans-serif;margin:0;background:#f9fafb;color:#222;line-height:1.6}
         header{background:#1e3c72;color:white;text-align:center;padding:30px 15px}
         header h1{margin-bottom:5px;font-size:28px}
@@ -34,8 +33,8 @@
         .back-to-top{display:block;text-align:right;font-size:13px;margin-top:10px;text-decoration:none;color:#1e3c72}
         .back-to-top:hover{text-decoration:underline}
         footer{text-align:center;padding:15px;font-size:13px;color:#555;margin-top:20px}
-        .file-now{position:fixed;right:15px;bottom:20px;background:#1e3c72;color:white;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 2px 10px rgba(0,0,0,0.1);transition:all 0.3s ease}
-        .file-now:hover{background:#16345c}
+        .file-now{position:fixed;right:15px;bottom:20px;background:#dc3545;color:white;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 2px 10px rgba(0,0,0,0.1);transition:all 0.3s ease}
+        .file-now:hover{background:#c82333}
     </style>
 </head>
 
@@ -46,9 +45,6 @@
     </header>
 
     <div class="container">
-        <div id="date-time" style="text-align:center;margin-bottom:15px;font-size:16px;color:#1e3c72;"></div>
-        <div id="deadline-clock" style="text-align:center;margin-bottom:20px;font-size:18px;font-weight:bold;color:#dc3545;"></div>
-        
         <!-- Table of Contents -->
         <div class="toc">
             <h2>Table of Contents</h2>
@@ -61,80 +57,31 @@
             <a href="#step7">7. Review & Submit</a>
         </div>
 
-        <!-- Content Sections (Steps) -->
-        <div class="step" id="step1">
-            <h2>Step 1: Determine Your Filing Status</h2>
-            <p>Here’s where you start! Your filing status will determine which tax rates you are subject to, and which credits apply.</p>
+        <!-- Form 1040 Steps (Lines 1-6) -->
+        <div class="step" id="step3">
+            <h2>Step 3: Form 1040 - Lines 1 to 6</h2>
+            <p>Now let's dive into **Form 1040**, which is the core tax form you'll use. These first few lines deal with your income and some basic deductions.</p>
+            <h3>Line 1: Wages, Salaries, Tips</h3>
+            <p>Enter your total wages, salaries, and tips here. This information can be found on **Form W-2**.</p>
+            <h3>Line 2: Taxable Interest</h3>
+            <p>Include all taxable interest income from your savings and investments.</p>
+            <h3>Line 3: Ordinary Dividends</h3>
+            <p>Report any dividend income you’ve received here.</p>
+            <h3>Line 4: IRA Distributions</h3>
+            <p>If you received IRA distributions, report them here.</p>
+            <h3>Line 5: Pensions and Annuities</h3>
+            <p>Report any income from pensions and annuities.</p>
+            <h3>Line 6: Social Security Benefits</h3>
+            <p>Report Social Security benefits here.</p>
         </div>
-
-        <!-- Example section for additional steps -->
-        <div class="step" id="step2">
-            <h2>Step 2: Enter Your Personal Information</h2>
-            <p>Include your name, Social Security number, and address, as well as any dependents you may claim.</p>
-        </div>
-
-        <!-- Add more steps as required... -->
-
-        <footer>
-            <p>Educational purposes only. Verify all entries with official IRS instructions. Affiliate e-file.com link optional.</p>
-        </footer>
     </div>
 
     <!-- Floating File Taxes Now Button -->
     <a href="https://www.e-file.com" target="_blank" class="file-now">File Taxes Now</a>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for Floating Button & Countdown -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var coll = document.getElementsByClassName("collapsible");
-            for (var i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.display === "block") {
-                        content.style.display = "none";
-                    } else {
-                        content.style.display = "block";
-                    }
-                });
-            }
-
-            // Show current date
-            function showCurrentDate() {
-                const now = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                document.getElementById('date-time').textContent = now.toLocaleDateString(undefined, options);
-            }
-
-            // Countdown for tax deadline
-            function updateDeadlineClock() {
-                const now = new Date();
-                const standardDeadline = new Date(now.getFullYear(), 3, 15, 23, 59, 59);
-                const extensionDeadline = new Date(now.getFullYear(), 9, 15, 23, 59, 59);
-                const target = showStandardDeadline ? standardDeadline : extensionDeadline;
-                const diff = target - now;
-
-                if (diff > 0) {
-                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                    const seconds = Math.floor((diff / 1000) % 60);
-                    document.getElementById('deadline-clock').textContent = (showStandardDeadline ? "Tax Deadline Countdown: " : "Extension Deadline Countdown: ") + `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                } else {
-                    document.getElementById('deadline-clock').textContent = showStandardDeadline ? "Standard Tax Deadline Passed!" : "Tax Extension Deadline Passed!";
-                }
-            }
-
-            setInterval(function() {
-                showStandardDeadline = !showStandardDeadline;
-            }, 120000);
-
-            setInterval(updateDeadlineClock, 1000);
-
-            // Initialize date/time and deadline clock
-            showCurrentDate();
-            updateDeadlineClock();
-        });
+        // Add your script here
     </script>
 </body>
 </html>
