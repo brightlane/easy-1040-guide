@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Easy 1040 Tax Guide – Step by Step</title>
-<meta name="description" content="Step-by-step beginner-friendly guide to completing IRS Form 1040 with tips, examples, and live tax countdown.">
-
+<title>Easy 1040 Guide for First-Time Filers</title>
+<meta name="description" content="Beginner-friendly step-by-step guide to filing your first IRS 1040 tax return. Visual examples, daily tips, and countdown to deadlines.">
 <style>
-body { font-family: Arial, Helvetica, sans-serif; margin:0; background:#ffffff; color:#333; line-height:1.6;}
+body { font-family: Arial, Helvetica, sans-serif; margin:0; background:#fdfdfd; color:#333; line-height:1.6;}
 header { background:#1a3c75; color:white; text-align:center; padding:30px 20px;}
 header h1 { margin:0 0 5px; font-size:28px;}
 header p { margin:0; font-size:16px;}
@@ -25,6 +24,10 @@ header #currentDate { margin-top:8px; font-size:14px;}
 .tip-box { background:#fff3cd; border-left:4px solid #ffc107; padding:12px; margin:12px 0; border-radius:4px; font-weight:bold; font-size:15px;}
 #taxCountdown { background:#d1ecf1; border-left:4px solid #17a2b8; padding:12px; margin:12px 0; border-radius:4px; font-weight:bold; font-size:15px; text-align:center;}
 
+/* Interactive form replica */
+#formReplica { border:1px solid #ccc; padding:12px; background:#f5f7fa; border-radius:6px; font-family:monospace; white-space:pre-line; margin-top:15px;}
+#formReplica .highlight-line { background:#ffeeba; display:block; padding:2px; border-radius:2px; }
+
 /* Floating CTA button */
 .floating-cta { position:fixed; right:15px; top:120px; z-index:1000; background:#1a3c75; color:white; padding:12px 18px; border-radius:6px; font-weight:bold; text-decoration:none; font-size:16px;}
 .floating-cta:hover { background:#13305a; }
@@ -34,14 +37,14 @@ header #currentDate { margin-top:8px; font-size:14px;}
 #progressBar { width:0%; height:8px; background:#1a3c75; border-radius:5px;}
 
 /* Mobile */
-@media (max-width:768px){ .step { padding:15px 0; font-size:14px;} .visual { font-size:13px;} .floating-cta { right:10px; top:100px; font-size:15px; padding:10px;} }
+@media (max-width:768px){ .step { padding:15px 0; font-size:14px;} .visual { font-size:13px;} .floating-cta { right:10px; top:100px; font-size:15px; padding:10px;} #formReplica { font-size:13px; } }
 </style>
 </head>
 <body>
 
 <header>
-<h1>Easy 1040 Tax Guide</h1>
-<p>Step-by-step instructions – beginner-friendly</p>
+<h1>Easy 1040 Guide for First-Time Filers</h1>
+<p>Step-by-step instructions, visual examples, and tips for filing your first tax return</p>
 <div id="currentDate"></div>
 </header>
 
@@ -51,94 +54,121 @@ header #currentDate { margin-top:8px; font-size:14px;}
 
 <div id="progressBarContainer"><div id="progressBar"></div></div>
 
-<div class="tip-box" id="dailyTipBox">Loading today's tax tip...</div>
-<div class="tip-box" id="weeklyTipBox">Loading this week's tax tip...</div>
+<div class="tip-box" id="dailyTipBox">Loading today's tip...</div>
+<div class="tip-box" id="weeklyTipBox">Loading this week's tip...</div>
 <div id="taxCountdown">Loading tax countdown...</div>
 
-<!-- Steps -->
+<!-- Step 1 -->
 <div class="step" id="step1">
-<h2><span>🗂</span>Step 1: Gather Documents</h2>
+<h2><span>🗂</span>Step 1: Gather Your Papers</h2>
 <ul>
 <li>W-2 from your employer</li>
-<li>1099 forms</li>
+<li>1099 forms (if you did side work)</li>
 <li>Social Security Number</li>
+<li>Any other income documents</li>
 </ul>
-<div class="visual">[ W-2 ] + [ 1099 ] + [ SSN ] = Ready</div>
+<div class="visual">
+[ W-2 ] + [ 1099 ] + [ SSN ] = Ready to Start
+</div>
+<p>Explanation: Collect all your income documents first. Missing anything may delay filing.</p>
 </div>
 
+<!-- Step 2 -->
 <div class="step" id="step2">
-<h2><span>✏️</span>Step 2: Personal Info</h2>
+<h2><span>✏️</span>Step 2: Fill Personal Info</h2>
 <div class="visual">
 Name: Jane Doe  
-Filing Status: Single  
-SSN: XXX-XX-0000
+SSN: XXX-XX-0000  
+Filing Status: Single
 </div>
-<div class="tip-box">Tip: Your filing status affects your taxes (Single, Married, Head of Household)</div>
+<p>Explanation: Single = not married. Head of Household = you support children/dependents. Filing status affects your taxes.</p>
 </div>
 
+<!-- Step 3 -->
 <div class="step" id="step3">
-<h2><span>💵</span>Step 3: Report Income</h2>
+<h2><span>💵</span>Step 3: Enter Income</h2>
 <div class="visual">
-W-2: <span class="number-highlight">$40,000</span>  
-Side Job: <span class="number-highlight">$5,000</span>  
-Total Income: <span class="number-highlight">$45,000</span>
+Wages: <span class="number-highlight">$40,000</span>  
+Side Job: <span class="number-highlight">$500</span>  
+Interest: <span class="number-highlight">$200</span>  
+Total Income: <span class="number-highlight">$40,700</span>
 </div>
+<p>Explanation: Enter every source of income. Total income goes on Form 1040 line 1-7.</p>
 </div>
 
+<!-- Step 4 -->
 <div class="step" id="step4">
 <h2><span>📊</span>Step 4: Adjust Income</h2>
 <div class="visual">
-Total Income: <span class="number-highlight">$45,000</span>  
-Adjustments: <span class="number-highlight">-$2,000</span>  
-AGI: <span class="number-highlight">$43,000</span>
+Total Income: <span class="number-highlight">$40,700</span>  
+IRA Deduction: <span class="number-highlight">-$2,000</span>  
+Student Loan Interest: <span class="number-highlight">-$500</span>  
+AGI: <span class="number-highlight">$38,200</span>
 </div>
+<p>Explanation: Adjustments lower your taxable income. Your AGI is used to determine credits and deductions.</p>
 </div>
 
+<!-- Step 5 -->
 <div class="step" id="step5">
-<h2><span>📉</span>Step 5: Deductions</h2>
+<h2><span>📉</span>Step 5: Choose Deductions</h2>
 <div class="visual">
-AGI: <span class="number-highlight">$43,000</span>  
+AGI: <span class="number-highlight">$38,200</span>  
 Standard Deduction: <span class="number-highlight">-$13,850</span>  
-Taxable Income: <span class="number-highlight">$29,150</span>
+Taxable Income: <span class="number-highlight">$24,350</span>
 </div>
+<p>Explanation: Standard deduction is easiest. Itemized deduction may save more if you have big expenses.</p>
 </div>
 
+<!-- Step 6 -->
 <div class="step" id="step6">
-<h2><span>💰</span>Step 6: Credits</h2>
+<h2><span>💰</span>Step 6: Apply Credits</h2>
 <div class="visual">
-Tax: <span class="number-highlight">$3,200</span>  
-Credits: <span class="number-highlight">-$1,000</span>  
-New Tax: <span class="number-highlight">$2,200</span>
+Tax Before Credits: <span class="number-highlight">$2,300</span>  
+Child Tax Credit: <span class="number-highlight">-$1,000</span>  
+Education Credit: <span class="number-highlight">-$200</span>  
+Tax After Credits: <span class="number-highlight">$1,100</span>
 </div>
+<p>Explanation: Credits directly reduce the tax you owe. Always check eligibility.</p>
 </div>
 
+<!-- Step 7 -->
 <div class="step" id="step7">
 <h2><span>🎉</span>Step 7: Filing & Refund</h2>
 <div class="visual">
-Paid: <span class="number-highlight">$3,000</span>  
-Tax Owed: <span class="number-highlight">$2,200</span>  
-Refund: <span class="number-highlight">$800 🎉</span>
+Taxes Paid: <span class="number-highlight">$1,500</span>  
+Tax Owed: <span class="number-highlight">$1,100</span>  
+Refund: <span class="number-highlight">$400 🎉</span>
 </div>
-</div>
-
-<!-- Your own instructions / notes -->
-<div class="step" id="instructions">
-<h2><span>📄</span>Additional Filing Notes</h2>
-<p>Follow each step carefully, double-check your numbers, and consult a tax professional if unsure.</p>
+<p>Explanation: If you paid more than owed, you get a refund. Otherwise, pay the difference.</p>
 </div>
 
+<!-- Interactive Form Replica -->
+<div class="step" id="formStep">
+<h2><span>📄</span>Form 1040 Visual Guide</h2>
+<div id="formReplica">
+<span id="line1" class="highlight-line">Line 1: Wages – $0</span>
+<span id="line2">Line 2: Taxable Interest – $0</span>
+<span id="line3">Line 3: Ordinary Dividends – $0</span>
+<span id="line4">Line 4: IRA Deduction – $0</span>
+<span id="line5">Line 5: AGI – $0</span>
+<span id="line6">Line 6: Standard Deduction – $0</span>
+<span id="line7">Line 7: Taxable Income – $0</span>
+<span id="line8">Line 8: Tax Credits – $0</span>
+<span id="line9">Line 9: Tax After Credits – $0</span>
+<span id="line10">Line 10: Refund / Owe – $0</span>
+</div>
+<p>Hover over a line to see which step it matches above.</p>
 </div>
 
 <footer>
-<p>Educational purposes only. Always verify your numbers before filing.</p>
+<p>Educational purposes only. Always verify with IRS before filing.</p>
 </footer>
 
 <script>
-// Current date & clock
+// Current date & live clock
 function updateDate(){
   const now = new Date();
-  const options = { weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit' };
-  document.getElementById('currentDate').innerText = now.toLocaleDateString('en-US', options);
+  document.getElementById('currentDate').innerText = now.toLocaleString('en-US', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit'});
 }
 setInterval(updateDate,1000);
 updateDate();
@@ -191,6 +221,25 @@ function updateTaxCountdown(){
 setInterval(updateTaxCountdown,1000);
 setInterval(()=>{showExtension=!showExtension;},120000);
 updateTaxCountdown();
+
+// Interactive form hover highlighting
+const stepLines = {
+  'step3':'line1',
+  'step4':'line4',
+  'step5':'line6',
+  'step6':'line8',
+  'step7':'line10'
+};
+for(const stepId in stepLines){
+  const stepElem = document.getElementById(stepId);
+  stepElem.addEventListener('mouseenter',()=>{
+    document.querySelectorAll('#formReplica span').forEach(el=>el.classList.remove('highlight-line'));
+    document.getElementById(stepLines[stepId]).classList.add('highlight-line');
+  });
+  stepElem.addEventListener('mouseleave',()=>{
+    document.querySelectorAll('#formReplica span').forEach(el=>el.classList.remove('highlight-line'));
+  });
+}
 </script>
 
 </body>
