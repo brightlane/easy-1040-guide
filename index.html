@@ -3,85 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate 1040 Tax Guide | IRS Instructions & All Schedules</title>
-    <meta name="description" content="Step-by-step IRS-based guide for first-time filers. Covers Form 1040, Schedules 1–3, C, SE, and includes official instructions, examples, tips, and PDFs.">
-    <meta name="keywords" content="1040 guide, IRS instructions, first-time filer, Schedule 1, Schedule 2, Schedule 3, Schedule C, Schedule SE, Schedule E, Form 8863, Form 8880, Form 8962, how to file taxes, e-file.com, tax education">
-
+    <title>How to Complete IRS Form 1040: A Step-by-Step Guide for First-Time Filers</title>
+    <meta name="description" content="Complete IRS Form 1040 guide with step-by-step instructions, tax credits, deductions, and tips. Learn how to file taxes on your own and maximize refunds.">
+    <meta name="keywords" content="IRS Form 1040, step-by-step tax guide, file taxes online, tax deductions, tax credits, self-employment taxes, tax filing tips, e-filing IRS">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="BrightLane Tax Guide">
+    <link rel="canonical" href="https://brightlane.github.io/how-to-file-easy-1040-guide/">
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file (if any) -->
     <style>
-        body{font-family:'Segoe UI',sans-serif;margin:0;background:#f9fafb;color:#222;line-height:1.6}
-        header{background:#1e3c72;color:white;text-align:center;padding:30px 15px}
-        header h1{margin-bottom:5px;font-size:28px}
-        header p{font-size:16px;margin:0}
-        .container{max-width:1200px;margin:auto;padding:15px;background:white}
-        .toc{background:#f1f1f1;padding:15px;border-radius:8px;margin-bottom:20px}
-        .toc h2{font-size:18px;margin-bottom:10px}
-        .toc a{display:block;margin:5px 0;color:#1e3c72;text-decoration:none}
-        .toc a:hover{text-decoration:underline}
-        .step{margin:20px 0;padding:20px;border-radius:10px;background:#f7f8fa;border-left:6px solid #1e3c72;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
-        .step h2{margin-top:0;font-size:20px;display:flex;align-items:center}
-        .step h2 span{margin-right:8px;font-size:24px}
-        .step h3{margin-top:10px;font-size:16px;color:#1e3c72}
-        .visual{background:#fff;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc;font-family:monospace;font-size:14px;white-space:pre-line}
-        .tip-box{background:#fff3cd;border-left:5px solid #ffc107;padding:12px;margin:10px 0;border-radius:5px;font-size:14px}
-        .warning-box{background:#f8d7da;border-left:5px solid #dc3545;padding:12px;margin:10px 0;border-radius:5px;font-size:14px}
-        .instruction-box{background:#e8f0fe;border-left:5px solid:#1e3c72;padding:12px;margin:10px 0;border-radius:5px;font-size:14px}
-        .collapsible{background-color:#f1f1f1;border:none;color:#444;padding:10px;text-align:left;outline:none;font-size:15px;width:100%;cursor:pointer;border-radius:6px;margin-top:10px;transition:0.3s}
-        .collapsible::after{content:' ▼';font-size:12px;padding-left:5px;transition:0.3s}
-        .active::after{content:' ▲'}
-        .active,.collapsible:hover{background-color:#ddd}
-        .content{padding:0 18px;display:none;overflow:hidden;background-color:#f9f9f9;border-radius:5px;transition:max-height 0.3s ease}
-        .back-to-top{display:block;text-align:right;font-size:13px;margin-top:10px;text-decoration:none;color:#1e3c72}
-        .back-to-top:hover{text-decoration:underline}
-        footer{text-align:center;padding:15px;font-size:13px;color:#555;margin-top:20px}
-        .file-now{position:fixed;right:15px;bottom:20px;background:#dc3545;color:white;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 2px 10px rgba(0,0,0,0.1);transition:all 0.3s ease}
-        .file-now:hover{background:#c82333}
+        /* Basic Styling */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Arial', sans-serif;
+        }
+        header {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+        h1 {
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .cta-button a {
+            padding: 12px 30px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-size: 14px;
+            color: #888;
+        }
+        footer a {
+            color: #1e3c72;
+            text-decoration: none;
+        }
+        .cta-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 10;
+        }
+        /* Mobile-friendly */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
+<body>
 
-<body id="top">
-    <header>
-        <h1>Ultimate First-Time Filer 1040 Guide</h1>
-        <p>Step-by-step IRS-based instructions for Form 1040, all schedules, and credits.</p>
-    </header>
+<header>
+    <h1>How to Complete IRS Form 1040: A Step-by-Step Guide for First-Time Filers</h1>
+    <p>Learn how to file your taxes confidently with our easy-to-follow, step-by-step guide to completing IRS Form 1040.</p>
+</header>
 
-    <div class="container">
-        <!-- Table of Contents -->
-        <div class="toc">
-            <h2>Table of Contents</h2>
-            <a href="#step1">1. Determine Filing Status</a>
-            <a href="#step2">2. Enter Personal Info</a>
-            <a href="#step3">3. Form 1040: Top Lines 1–6</a>
-            <a href="#step4">4. Report Income & Schedules</a>
-            <a href="#step5">5. Self-Employment & Rental Income</a>
-            <a href="#step6">6. Education & Retirement Credits</a>
-            <a href="#step7">7. Review & Submit</a>
-        </div>
+<div class="container">
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#filing-status">1. Filing Status: How to Determine Your Filing Status</a></li>
+        <li><a href="#personal-information">2. Enter Personal Information: SSN, Address, and Dependents</a></li>
+        <li><a href="#income-section">3. Income Section: How to Report All Sources of Income</a></li>
+        <li><a href="#adjustments">4. Adjustments to Income: Deductions You Can Claim</a></li>
+        <li><a href="#taxable-income">5. Taxable Income: How to Calculate Your Taxable Income</a></li>
+        <li><a href="#tax-calculation">6. Tax Calculation: How to Calculate Your Total Tax Liability</a></li>
+        <li><a href="#tax-credits">7. Tax Credits: Maximize Your Refunds</a></li>
+        <li><a href="#other-taxes">8. Other Taxes: Self-Employment Tax and More</a></li>
+        <li><a href="#payments-refunds">9. Payments & Refunds: How to Calculate What You Owe or Get Back</a></li>
+        <li><a href="#signature">10. Signature & Submission: Final Steps for Filing</a></li>
+    </ul>
 
-        <!-- Form 1040 Steps (Lines 1-6) -->
-        <div class="step" id="step3">
-            <h2>Step 3: Form 1040 - Lines 1 to 6</h2>
-            <p>Now let's dive into **Form 1040**, which is the core tax form you'll use. These first few lines deal with your income and some basic deductions.</p>
-            <h3>Line 1: Wages, Salaries, Tips</h3>
-            <p>Enter your total wages, salaries, and tips here. This information can be found on **Form W-2**.</p>
-            <h3>Line 2: Taxable Interest</h3>
-            <p>Include all taxable interest income from your savings and investments.</p>
-            <h3>Line 3: Ordinary Dividends</h3>
-            <p>Report any dividend income you’ve received here.</p>
-            <h3>Line 4: IRA Distributions</h3>
-            <p>If you received IRA distributions, report them here.</p>
-            <h3>Line 5: Pensions and Annuities</h3>
-            <p>Report any income from pensions and annuities.</p>
-            <h3>Line 6: Social Security Benefits</h3>
-            <p>Report Social Security benefits here.</p>
-        </div>
+    <h2 id="filing-status">1. Filing Status: How to Determine Your Filing Status</h2>
+    <p>Your filing status affects your tax rates and eligibility for deductions and credits. Select the right status for your situation.</p>
+    <h3>1.1. Single vs. Married Filing Jointly</h3>
+    <p>Learn how your filing status impacts your tax deductions and credits.</p>
+
+    <h2 id="personal-information">2. Enter Personal Information: SSN, Address, and Dependents</h2>
+    <p>Provide your full name, Social Security Number (SSN), address, and information about your dependents.</p>
+    <h3>2.1. Reporting Dependents</h3>
+    <p>List any children or relatives you financially support. For each dependent, include their name, SSN, and relationship to you.</p>
+
+    <h2 id="income-section">3. Income Section: How to Report All Sources of Income</h2>
+    <p>Report all income sources such as wages, interest, dividends, and self-employment income.</p>
+    <h3>3.1. Reporting Wages from Form W-2</h3>
+    <p>If you are employed, your employer will send you **Form W-2**, which lists your wages and taxes withheld. Use this to report your income on the 1040 form.</p>
+    
+    <h3>3.2. Reporting Interest and Dividends</h3>
+    <p>If you have investment income, report it from **Form 1099-INT** or **Form 1099-DIV**.</p>
+
+    <h2 id="adjustments">4. Adjustments to Income: Deductions You Can Claim</h2>
+    <p>Some expenses can reduce your taxable income, such as student loan interest, IRA contributions, or tuition fees.</p>
+    <h3>4.1. Student Loan Interest Deduction</h3>
+    <p>You may deduct up to $2,500 of student loan interest. Check **Form 1098-E** for the amount of interest you paid.</p>
+
+    <h2 id="taxable-income">5. Taxable Income: How to Calculate Your Taxable Income</h2>
+    <p>Your taxable income is the amount after subtracting deductions from your gross income.</p>
+    <h3>5.1. Standard Deduction vs. Itemizing</h3>
+    <p>Decide whether to take the **standard deduction** or to itemize deductions. The standard deduction for **single filers** is $12,550 (2021). Itemizing may benefit you if you have large deductible expenses.</p>
+
+    <h2 id="tax-calculation">6. Tax Calculation: How to Calculate Your Total Tax Liability</h2>
+    <p>Use the **IRS tax tables** to calculate your tax based on your taxable income.</p>
+
+    <h2 id="tax-credits">7. Tax Credits: Maximize Your Refunds</h2>
+    <p>Claim any tax credits you're eligible for, such as the **Child Tax Credit** or the **Earned Income Tax Credit (EITC)**.</p>
+    <h3>7.1. Child Tax Credit</h3>
+    <p>For qualifying children under 17, you can claim up to $2,000 per child. You may qualify even if you owe no taxes.</p>
+
+    <h2 id="other-taxes">8. Other Taxes: Self-Employment Tax and More</h2>
+    <p>Some filers need to pay additional taxes, like **self-employment tax** (from Schedule SE).</p>
+
+    <h2 id="payments-refunds">9. Payments & Refunds: How to Calculate What You Owe or Get Back</h2>
+    <p>Enter the taxes already paid via withholding or estimated payments. Compare this to your tax liability to determine if you owe or get a refund.</p>
+
+    <h2 id="signature">10. Signature & Submission: Final Steps for Filing</h2>
+    <p>Sign and date your return. You must also include the necessary payment if you owe taxes. Use e-filing for faster processing.</p>
+
+    <div class="cta-button">
+        <!-- Updated Link with your URL -->
+        <a href="https://is.gd/gVSeKH" target="_blank">Start Free Tax Filing Now</a>
     </div>
+</div>
 
-    <!-- Floating File Taxes Now Button -->
-    <a href="https://www.e-file.com" target="_blank" class="file-now">File Taxes Now</a>
+<footer>
+    <p>Educational Guide by BrightLane. For more information, visit the <a href="https://www.irs.gov" target="_blank">IRS official website</a>.</p>
+    <p>Copyright © 2026 BrightLane. All rights reserved. <a href="https://www.irs.gov/forms-pubs/about-form-1040" target="_blank">Learn more about Form 1040</a>.</p>
+</footer>
 
-    <!-- JavaScript for Floating Button & Countdown -->
-    <script>
-        // Add your script here
-    </script>
 </body>
 </html>
