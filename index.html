@@ -554,3 +554,70 @@
     <div class="extra-tip">
         <strong>Extra Tips:</strong> Fill out schedules first, then transfer numbers to your 1040. Professor Hootington says: “Organize your papers before crunching numbers!”
     </div>
+    <!-- CTA Button for Filing Taxes -->
+    <div style="text-align:center; margin: 30px 0;">
+        <a href="https://is.gd/SRCKpA" target="_blank" 
+           style="background-color:red; color:white; padding:15px 25px; text-decoration:none; font-size:18px; border-radius:8px;">
+           Click here to file your taxes online
+        </a>
+    </div>
+
+    <!-- Current Date and Countdown Clocks -->
+    <div style="text-align:center; font-size:18px; color:white; background-color:#1a2b5c; padding:15px; border-radius:10px; margin-bottom:30px;">
+        <p>🗓️ Today's Date: <span id="current-date"></span></p>
+        <p>⏰ Countdown to Tax Deadline (Apr 15, 2026): <span id="deadline-clock"></span></p>
+        <p>⏰ Countdown to Tax Extension Day (Oct 15, 2026): <span id="extension-clock"></span></p>
+    </div>
+
+    <!-- Daily Tip Section -->
+    <div style="background-color:#2c3e70; color:white; padding:20px; border-radius:10px; margin-bottom:30px;">
+        <p><strong>🦉 Daily Tip from Professor Hootington:</strong> Keep all your forms in one place and check your numbers twice before submitting. Organization saves time and headaches!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align:center; background-color:#1a2b5c; color:white; padding:20px; border-radius:10px;">
+        <p>© 2026 Professor Hootington’s Tax Guide</p>
+        <p>For more information, visit: <a href="https://is.gd/SRCKpA" target="_blank" style="color:red; text-decoration:underline;">File Taxes Online</a></p>
+    </footer>
+
+    <!-- JavaScript for Dates and Clocks -->
+    <script>
+        // Current Date
+        const currentDateElement = document.getElementById("current-date");
+        currentDateElement.innerHTML = new Date().toLocaleDateString();
+
+        // Countdown to Tax Deadline
+        const deadlineDate = new Date("Apr 15, 2026 23:59:59").getTime();
+        const deadlineClock = document.getElementById("deadline-clock");
+
+        // Countdown to Tax Extension
+        const extensionDate = new Date("Oct 15, 2026 23:59:59").getTime();
+        const extensionClock = document.getElementById("extension-clock");
+
+        function updateClocks() {
+            const now = new Date().getTime();
+
+            // Deadline countdown
+            let distance = deadlineDate - now;
+            if(distance < 0) distance = 0;
+            const dDays = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const dHours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const dMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const dSeconds = Math.floor((distance % (1000 * 60)) / 1000);
+            deadlineClock.innerHTML = `${dDays}d ${dHours}h ${dMinutes}m ${dSeconds}s`;
+
+            // Extension countdown
+            let eDistance = extensionDate - now;
+            if(eDistance < 0) eDistance = 0;
+            const eDays = Math.floor(eDistance / (1000 * 60 * 60 * 24));
+            const eHours = Math.floor((eDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const eMinutes = Math.floor((eDistance % (1000 * 60 * 60)) / (1000 * 60));
+            const eSeconds = Math.floor((eDistance % (1000 * 60)) / 1000);
+            extensionClock.innerHTML = `${eDays}d ${eHours}h ${eMinutes}m ${eSeconds}s`;
+        }
+
+        setInterval(updateClocks, 1000);
+        updateClocks(); // Initial call
+    </script>
+</body>
+</html>
