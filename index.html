@@ -11,81 +11,108 @@
         margin: 0 auto; 
         padding: 30px 20px; 
         line-height: 1.7; 
-        color: #f1f1f1; 
-        background: #0b1d51; /* Dark Blue IRS style */
+        color: #fff; 
+        background-color: #0b2d5f; /* dark IRS blue background */
     }
     h1 { 
         text-align: center; 
-        color: #ffcc00; 
+        color: #ffd700; 
         font-size: 2.2em; 
-        margin-bottom: 10px;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        margin-bottom: 5px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
-    .subtitle { text-align: center; font-style: italic; color: #d1d1d1; margin-top: -10px; }
+    .subtitle { 
+        text-align: center; 
+        font-style: italic; 
+        color: #cce0ff; 
+        margin-top: -5px; 
+    }
     h2 { 
-        color: #66b2ff; 
-        border-bottom: 3px solid #66b2ff; 
+        color: #ffd700; 
+        border-bottom: 2px solid #ffd700; 
         padding-bottom: 10px; 
         font-size: 1.8em;
         margin-top: 40px;
     }
     h3 { 
-        color: #ffd966; 
+        color: #ffcc00; 
         font-size: 1.4em; 
-        margin-top: 30px;
+        margin-top: 25px;
     }
-    h4 { color: #ffcc00; font-size: 1.2em; }
+    h4 { color: #00ffcc; font-size: 1.2em; }
+    p, ul, li { color: #f0f8ff; }
+    ul { padding-left: 25px; }
+    li { margin-bottom: 8px; }
     .tip { 
-        background: #142c6b; 
-        padding: 20px; 
-        border-left: 6px solid #66b2ff; 
+        background: #001f4d; 
+        padding: 15px; 
+        border-left: 6px solid #ffcc00; 
         border-radius: 8px; 
-        margin: 20px 0; 
+        margin: 15px 0; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     .extra-tip { 
-        background: #1c3a8a; 
+        background: #00264d; 
         padding: 15px; 
         border-radius: 8px; 
         margin: 15px 0; 
         font-style: italic; 
-        border-left: 5px solid #ffd966;
+        border-left: 5px solid #00ccff;
     }
-    ul { padding-left: 25px; }
-    li { margin-bottom: 8px; }
     .check { color: #28a745; font-size: 1.1em; }
     .emoji { font-size: 1.6em; vertical-align: middle; }
     blockquote { 
-        background: #142c6b; 
-        border-left: 5px solid #6c757d; 
+        background: #001a3d; 
+        border-left: 5px solid #666; 
         padding: 20px; 
         font-size: 1.1em; 
         font-style: italic; 
         margin: 30px 0;
     }
-    a.cta-button {
-        display: inline-block;
-        background-color: #ff4c4c;
-        color: #fff;
+    .cta-button {
+        background-color: #ff0000;
+        color: white;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        text-align: center;
         text-decoration: none;
-        padding: 12px 20px;
-        border-radius: 6px;
-        font-weight: bold;
-        margin: 15px 0;
+        margin: 20px 0;
+        display: inline-block;
     }
-    a.cta-button:hover { background-color: #e60000; }
+    .cta-button:hover {
+        background-color: #cc0000;
+    }
+    .clock-container {
+        text-align: center; 
+        margin: 20px 0; 
+        font-size: 1.2em; 
+        color: #cce0ff;
+    }
     @media (max-width: 600px) { 
         body { padding: 20px 10px; } 
         h1 { font-size: 1.8em; }
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.2em; }
     }
 </style>
 </head>
 <body>
 
-<!-- CTA Box at the Top -->
-<p style="text-align:center;"><a href="https://is.gd/SRCKpA" target="_blank" class="cta-button">Click here to file your taxes online</a></p>
+<h1>🦉 Professor Hootington’s ULTRA EASY “How to File Taxes” Guide</h1>
+<div class="subtitle">(Perfect for First-Time Filers)</div>
 
-<h1>🦉 Professor Hootington’s ULTRA EASY “How to File Taxes” Guide
-<div class="subtitle">(Perfect for First-Time Filers)</div></h1>
+<!-- CTA at top -->
+<p style="text-align:center;">
+    <a href="https://is.gd/SRCKpA" class="cta-button" target="_blank">Click here to file your taxes online</a>
+</p>
+
+<!-- Current Date and Clock -->
+<div class="clock-container">
+    Current Date & Time: <span id="current-date-time"></span><br>
+    Countdown to Tax Deadline (Apr 15): <span id="countdown-deadline"></span><br>
+    Countdown to Tax Extension (Oct 15): <span id="countdown-extension"></span>
+</div>
 
 <h2>✅ PART 1 — HOW TO DO TAXES (THE BIG PICTURE)</h2>
 
@@ -163,51 +190,38 @@
     <strong>Extra Tips:</strong> Refund = your money coming back. Owing money is normal sometimes.
 </div>
 
-<h2>📄 Step 6 — Supporting Schedules & Forms</h2>
+<script>
+    // Unified Clock and Countdown
+    function updateClocks() {
+        const now = new Date();
 
-<h3>🦉 Schedule A — Itemized Deductions</h3>
-<p>Used if you want to deduct specific expenses instead of taking the standard deduction.</p>
-<ul>
-    <li>Medical expenses</li>
-    <li>Mortgage interest</li>
-    <li>Charitable donations</li>
-    <li>State and local taxes</li>
-</ul>
-<div class="tip">🦉 Professor Hootington: “Only itemize if it’s bigger than the standard deduction. Keep receipts!”</div>
+        // Current date and time
+        document.getElementById("current-date-time").textContent = now.toLocaleString();
 
-<h3>🦉 Schedule B — Interest & Dividends</h3>
-<ul>
-    <li>All taxable interest from savings and investment accounts</li>
-    <li>Dividends from stocks or mutual funds</li>
-</ul>
-<div class="extra-tip">🦉 Professor Hootington: “Double-check your 1099-INT and 1099-DIV forms to avoid mistakes.”</div>
+        // Tax Deadline (April 15)
+        const deadline = new Date(now.getFullYear(), 3, 15, 23, 59, 59); // April is month 3 (0-based)
+        let distanceDeadline = deadline - now;
+        if (distanceDeadline < 0) distanceDeadline = 0;
+        const daysD = Math.floor(distanceDeadline / (1000 * 60 * 60 * 24));
+        const hoursD = Math.floor((distanceDeadline % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minsD = Math.floor((distanceDeadline % (1000 * 60 * 60)) / (1000 * 60));
+        const secsD = Math.floor((distanceDeadline % (1000 * 60)) / 1000);
+        document.getElementById("countdown-deadline").textContent = `${daysD}d ${hoursD}h ${minsD}m ${secsD}s`;
 
-<h3>🦉 Schedule C — Business or Self-Employment Income</h3>
-<ul>
-    <li>Income from freelancing, small business, or side gigs</li>
-    <li>Expenses like supplies, home office, mileage</li>
-</ul>
-<div class="tip">🦉 Professor Hootington: “Track everything carefully. Uncle Sam likes documentation!”</div>
+        // Tax Extension (October 15)
+        const extension = new Date(now.getFullYear(), 9, 15, 23, 59, 59); // October is month 9
+        let distanceExt = extension - now;
+        if (distanceExt < 0) distanceExt = 0;
+        const daysE = Math.floor(distanceExt / (1000 * 60 * 60 * 24));
+        const hoursE = Math.floor((distanceExt % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minsE = Math.floor((distanceExt % (1000 * 60 * 60)) / (1000 * 60));
+        const secsE = Math.floor((distanceExt % (1000 * 60)) / 1000);
+        document.getElementById("countdown-extension").textContent = `${daysE}d ${hoursE}h ${minsE}m ${secsE}s`;
+    }
 
-<h3>🦉 Schedule D — Capital Gains & Losses</h3>
-<ul>
-    <li>Profit or loss from selling stocks, crypto, or investments</li>
-</ul>
-<div class="extra-tip">🦉 Professor Hootington: “Keep accurate records of purchase price and sale price for all assets.”</div>
-
-<h3>🦉 Schedule SE — Self-Employment Tax</h3>
-<ul>
-    <li>Calculate Social Security and Medicare tax if self-employed</li>
-</ul>
-<div class="tip">🦉 Professor Hootington: “Don’t forget this—self-employment taxes can be easy to overlook.”</div>
-
-<h3>🦉 Other Important Forms</h3>
-<ul>
-    <li>Schedule 8812 — Child Tax Credit</li>
-    <li>Form 8863 — Education Credits</li>
-    <li>Form 8880 — Retirement Savings Contributions Credit</li>
-</ul>
-<div class="extra-tip">🦉 Professor Hootington: “Finish these schedules first, then transfer numbers to your main 1040 form.”</div>
+    setInterval(updateClocks, 1000);
+    updateClocks(); // Initial call
+</script>
 
 </body>
 </html>
