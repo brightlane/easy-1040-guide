@@ -4,52 +4,57 @@
     <meta charset="UTF-8">
     <title>Professor Hootington Tax Guide</title>
     <style>
-        /* Base styling */
+        /* Dark blue full-page background */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
-            background-color: #f0f4f8; /* light blue background like IRS */
-            color: #000;
+            background-color: #003366; /* IRS dark blue background */
+            color: #ffffff; /* white text for contrast */
         }
 
-        /* Headings in IRS dark blue */
+        /* Headings in lighter blue for contrast */
         h1, h2, h3 {
-            color: #003366 !important;
+            color: #99ccff !important; /* light blue headings */
         }
 
         ul {
             margin: 10px 0 20px 20px;
         }
 
-        /* Tip boxes in subtle blue */
+        /* Tip boxes in very light blue for readability */
         .tip, .extra-tip {
-            background-color: #d9e6f2 !important;  /* subtle blue */
-            border-left: 5px solid #003366 !important;
+            background-color: #1a4d80 !important;  /* darker blue but visible */
+            border-left: 5px solid #99ccff !important;
             padding: 10px;
             margin: 10px 0;
-        }
-
-        /* Checkmarks */
-        .check {
-            color: green;
-            font-weight: bold;
+            color: #ffffff; /* ensure text is visible */
         }
 
         /* CTA Button */
         a.button {
-            background-color: #003366 !important;
-            color: white !important;
+            background-color: #ffcc00 !important; /* bright gold for visibility */
+            color: #003366 !important;
             padding: 15px 25px;
             text-decoration: none;
             font-size: 18px;
             border-radius: 8px;
             display: inline-block;
+            font-weight: bold;
         }
 
         a.button:hover {
-            background-color: #002244 !important;
-            color: white !important;
+            background-color: #e6b800 !important;
+            color: #003366 !important;
+        }
+
+        /* Make lists readable on dark background */
+        li {
+            color: #ffffff;
+        }
+
+        p {
+            color: #ffffff;
         }
     </style>
 </head>
