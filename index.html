@@ -2,151 +2,191 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>How to File Taxes with Professor Owl</title>
+<title>How to File Taxes - Easy Guide</title>
+
 <style>
-  body {
+body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
     background-color: #0b2f5a;
     color: #ffffff;
-  }
-  a { color: #ffcc00; text-decoration: none; }
-  h1, h2 { color: #ffcc00; }
-  h3 { color: #ffffff; margin-top: 20px; }
-  ul { margin: 10px 0 20px 20px; }
-  .tip, .extra-tip {
+}
+
+h1, h2 { color: #ffcc00; }
+h3 { color: #ffffff; }
+
+ul { margin: 10px 0 20px 20px; }
+
+.tip, .extra-tip {
     background-color: #1f4e79;
     border-left: 5px solid #ffcc00;
     padding: 10px;
     margin: 10px 0;
-    color: #ffffff;
-  }
-  .button {
-    background-color: #ffcc00;
-    color:#0b2f5a;
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    display: inline-block;
-    margin-top: 10px;
-  }
-  .professor {
+}
+
+.professor {
     width: 120px;
     float: right;
-    margin-left: 20px;
-  }
-  .countdown { font-size: 20px; margin-top: 10px; }
-  .banner { text-align: center; margin-bottom: 20px; }
-  @media (max-width:600px){
-    .professor { float:none; display:block; margin:auto; margin-bottom:10px; }
-  }
+    margin: 0 0 10px 20px;
+}
+
+.button {
+    background-color: #ffcc00;
+    color:#0b2f5a;
+    padding:15px 25px;
+    text-decoration:none;
+    font-size:18px;
+    border-radius:8px;
+}
+
+.countdown {
+    font-size: 20px;
+}
+
+.banner {
+    text-align:center;
+    margin-bottom:20px;
+}
+
+@media (max-width:600px){
+    .professor {
+        float:none;
+        display:block;
+        margin:auto;
+        margin-bottom:10px;
+    }
+}
 </style>
 </head>
+
 <body>
 
 <!-- Banner -->
 <div class="banner">
 <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide">
-<img src="https://7667.imgix.net/banners/54182.png" border="0" alt="E-file.com">
-<img src="https://www.linkconnector.com/tr.php?lc=007949054182005142&atid=TaxGuide&tb=1" border="0" width="1" height="1">
+<img src="https://7667.imgix.net/banners/54182.png">
 </a>
 </div>
 
-<!-- Current date -->
 <p>📅 Today is: <span id="currentDate"></span></p>
-
-<!-- Countdown clock -->
 <p class="countdown">⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
 
-<h1>🦉 How to File Your Taxes</h1>
+<h1>🦉 Professor Owl’s Easy Tax Guide</h1>
 
-<!-- Professor Owl Image -->
-<img src="https://raw.githubusercontent.com/brightlane/how-to-file-taxes/refs/heads/main/thumbnail.jfif" 
-     alt="Professor Owl" class="professor">
+<img src="thumbnail.jfif" alt="Professor Owl" class="professor">
 
-<!-- CONTENT -->
-<h2>Step 1: Gather Your Income Papers</h2>
-<p>We need to know how much money you made this year. Let’s get all your papers together!</p>
+<h2>✅ PART 1 — Get Your Papers Ready</h2>
+
+<h3>Step 1: Income Papers</h3>
 <ul>
-  <li>W-2: Shows your salary from your job.</li>
-  <li>1099: Shows freelance, interest, or dividend income.</li>
-  <li>Other income: Side jobs, tips, or rental money.</li>
+<li>W-2 = money from your job</li>
+<li>1099 = extra money (side jobs, bank interest)</li>
+<li>Other money (tips, small jobs)</li>
 </ul>
-<div class="tip">📝 <strong>Tip:</strong> Keep these in a folder so nothing gets lost.</div>
+<div class="tip"><strong>Tip:</strong> Put everything in one folder.</div>
 
-<h2>Step 2: Gather Your Deductions & Expenses</h2>
-<p>These can lower the tax you owe.</p>
+<h3>Step 2: Deductions (Things that save money)</h3>
 <ul>
-  <li>Receipts for charitable donations.</li>
-  <li>Medical expenses (if you plan to itemize).</li>
-  <li>Education costs like tuition and books.</li>
+<li>Charity donations</li>
+<li>Medical bills</li>
+<li>School costs</li>
 </ul>
-<div class="tip">📝 <strong>Tip:</strong> Take photos or scan receipts for safety.</div>
+<div class="tip"><strong>Tip:</strong> Keep receipts!</div>
 
-<h2>Step 3: Collect Personal Info</h2>
+<h3>Step 3: Personal Info</h3>
 <ul>
-  <li>Social Security numbers (yours, spouse, and dependents).</li>
-  <li>Bank info for direct deposit.</li>
+<li>Social Security numbers</li>
+<li>Bank account</li>
 </ul>
-<div class="tip">📝 <strong>Tip:</strong> Double-check numbers — one mistake can delay your refund!</div>
+<div class="tip"><strong>Tip:</strong> Check numbers carefully.</div>
 
-<h2>Step 4: Read Your W-2</h2>
-<p>Box 1 = total money earned. Box 2 = tax already paid. Box 3 = Social Security wages.</p>
-<div class="extra-tip">📌 <strong>Tip:</strong> Compare to your pay stubs to make sure everything matches.</div>
+<h2>✅ PART 2 — Filling Out Your Taxes</h2>
 
-<h2>Step 5: Add Up All Income</h2>
-<p>Combine W-2, 1099, and other incomes to see total money made.</p>
-<div class="tip">📝 <strong>Tip:</strong> Don’t forget side jobs or bank interest!</div>
+<h3>Step 4: Add Your Income (Lines 4–8)</h3>
+<ul>
+<li>Line 4: Interest (bank money)</li>
+<li>Line 5: Dividends (stocks)</li>
+<li>Line 6: Retirement money</li>
+<li>Line 7: Social Security</li>
+<li>Line 8: Other income</li>
+</ul>
+<div class="extra-tip">Think of this like adding all your money together.</div>
 
-<h2>Step 6: Choose Deductions</h2>
-<p>Pick standard deduction (easy) or itemize if your expenses are high.</p>
-<div class="tip">📝 <strong>Tip:</strong> Use the option that lowers your taxes the most.</div>
+<h3>Step 5: Adjust Your Income (Line 9)</h3>
+<ul>
+<li>Student loan interest</li>
+<li>IRA savings</li>
+<li>Business costs</li>
+</ul>
+<div class="tip">These lower your total income.</div>
 
-<h2>Step 7: Apply Tax Credits</h2>
-<p>Credits reduce taxes directly. Examples: Child tax credit, education credits.</p>
-<div class="tip">📝 <strong>Tip:</strong> Make sure you claim all credits you qualify for.</div>
+<h3>Step 6: Find Your AGI</h3>
+<p>AGI = Total money − adjustments</p>
 
-<h2>Step 8: Calculate Tax</h2>
-<p>Subtract deductions and credits from income to see how much tax you owe.</p>
-<div class="extra-tip">📌 <strong>Tip:</strong> Use tax tables or software to avoid mistakes.</div>
+<h3>Step 7: Deductions (Lines 11–12)</h3>
+<ul>
+<li>Standard deduction (easy)</li>
+<li>Itemized (more detailed)</li>
+</ul>
+<div class="tip">Pick the bigger one to save money.</div>
 
-<h2>Step 9: Apply Payments</h2>
-<p>Include tax already paid from W-2 or estimated payments.</p>
-<div class="tip">📝 <strong>Tip:</strong> This tells if you get a refund or owe money.</div>
+<h3>Step 8: Calculate Tax (Lines 13–15)</h3>
+<ul>
+<li>Line 13: Your tax</li>
+<li>Extra taxes if needed</li>
+<li>Total tax</li>
+</ul>
 
-<h2>Step 10: Determine Refund or Amount Owed</h2>
-<p>If payments > tax owed → refund. If payments < tax owed → you owe money.</p>
-<div class="extra-tip">📌 <strong>Tip:</strong> Double-check numbers before submitting.</div>
+<h3>Step 9: Credits & Payments (Lines 16–20)</h3>
+<ul>
+<li>Tax already paid</li>
+<li>Credits (money back)</li>
+</ul>
+<div class="extra-tip">Credits = money back!</div>
 
-<h2>Step 11: Sign & Submit</h2>
-<p>Don’t forget to sign your 1040 — unsigned forms get rejected!</p>
-<div class="tip">📝 <strong>Tip:</strong> Keep a copy for yourself.</div>
+<h3>Step 10: Refund or Owe (Lines 21–24)</h3>
+<ul>
+<li>Paid too much → refund</li>
+<li>Paid too little → owe</li>
+</ul>
 
-<!-- Call to Action -->
+<h3>Step 11: Sign (Line 25)</h3>
+<p>Don’t forget to sign!</p>
+
+<h3>Extra Forms</h3>
+<ul>
+<li>Schedule A – deductions</li>
+<li>Schedule B – interest</li>
+<li>Schedule C – business</li>
+</ul>
+
 <div style="text-align:center; margin:30px 0;">
-<a href="https://is.gd/SRCKpA" target="_blank" class="button">Click here to file your taxes online</a>
+<a href="https://is.gd/SRCKpA" target="_blank" class="button">
+Click here to file your taxes online
+</a>
 </div>
 
 <script>
-// Current Date
 document.getElementById("currentDate").innerText = new Date().toLocaleDateString();
 
-// Countdown to Tax Extension Deadline (example: October 15, 2026)
 const deadline = new Date("October 15, 2026 23:59:59").getTime();
-const countdownEl = document.getElementById("countdown");
+const el = document.getElementById("countdown");
+
 setInterval(() => {
   const now = new Date().getTime();
-  const distance = deadline - now;
-  if(distance < 0){ countdownEl.innerText = "Deadline passed!"; return; }
-  const days = Math.floor(distance/(1000*60*60*24));
-  const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-  const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-  const seconds = Math.floor((distance%(1000*60))/1000);
-  countdownEl.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-}, 1000);
+  const d = deadline - now;
+
+  if(d < 0){ el.innerText = "Deadline passed"; return; }
+
+  const days = Math.floor(d/(1000*60*60*24));
+  const hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+  const minutes = Math.floor((d%(1000*60*60))/(1000*60));
+  const seconds = Math.floor((d%(1000*60))/1000);
+
+  el.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+},1000);
 </script>
 
 </body>
