@@ -2,441 +2,246 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Professor Owl's Easy 1040 Tax Course</title>
+<title>Professor Owl Tax Wizard</title>
 
 <style>
-body {
-    font-family: Arial;
-    background:#0b1e3d;
-    color:white;
-    padding:20px;
+body{
+  font-family: Arial;
+  background:#07162f;
+  color:white;
+  padding:20px;
+  font-size:20px;
+  line-height:1.6;
 }
 
-/* BIG STICKY OWL */
-.owl-fixed {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    z-index: 999;
+h1{font-size:36px;}
+
+.card{
+  background:#102a52;
+  padding:25px;
+  border-radius:14px;
+  margin-top:20px;
+  min-height:260px;
 }
 
-.lesson {
-    background:#132a52;
-    padding:25px;
-    margin:25px 0;
-    border-radius:12px;
+.tip{
+  background:#081a33;
+  border-left:6px solid #9fc3ff;
+  padding:12px;
+  margin-top:12px;
 }
 
-.prof {
-    width: 300px;
-    margin-bottom:15px;
+.warning{
+  background:#2a1a1a;
+  border-left:6px solid #ffcc66;
+  padding:12px;
+  margin-top:12px;
 }
 
-.line {
-    background:#10264a;
-    padding:15px;
-    margin:15px 0;
-    border-left:5px solid #9fc3ff;
-    border-radius:8px;
+.buttons{
+  margin-top:20px;
+  display:flex;
+  gap:10px;
 }
 
-.tip {
-    background:#081a33;
-    padding:12px;
-    margin-top:10px;
-    border-left:5px solid #ffd166;
+button{
+  background:#9fc3ff;
+  border:none;
+  padding:12px 18px;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:8px;
+  color:#07162f;
 }
 
-.button {
-    background:#9fc3ff;
-    color:#0b1e3d;
-    padding:15px 25px;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:8px;
+button:disabled{
+  opacity:0.4;
+  cursor:not-allowed;
+}
+
+a.button{
+  background:#9fc3ff;
+  color:#07162f;
+  padding:14px 18px;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:8px;
+  display:inline-block;
 }
 </style>
 </head>
 
 <body>
 
-<img src="thumbnail.jfif" class="owl-fixed">
+<h1>🦉 Professor Owl Tax Wizard</h1>
 
-<h1>🦉 Professor Owl’s Complete 1040 Beginner Course</h1>
+<div class="card" id="stepBox"></div>
 
-<!-- INTRODUCTION -->
-<div class="lesson">
-<img src="thumbnail.jfif" class="prof">
-<p>
-Hello student! 🦉 I am Professor Owl. I will teach you how to complete your tax return step-by-step like a simple school lesson.  
-We will go slowly so you understand everything clearly.
-</p>
+<div class="buttons">
+  <button onclick="backStep()">⬅ Back</button>
+  <button onclick="nextStep()">Next ➡</button>
 </div>
 
-<!-- ===================== LINES 1–38 ===================== -->
-
-<div class="lesson">
-<h2>Line 1: W-2 Income</h2>
-<div class="line">
-1. This is money you earned from your job.<br>
-2. It comes from your employer’s W-2 form.<br>
-3. It includes salary, wages, and bonuses.<br>
-4. Enter the exact amount shown on your form.
-<div class="tip">🦉 Tip: This is your most important starting number.</div>
+<div id="finalCTA" style="display:none; margin-top:25px; text-align:center;">
+  <h2>🎉 You’re Ready!</h2>
+  <p>You now understand the full tax process step-by-step.</p>
+  <a class="button" href="https://is.gd/SRCKpA">🦉 Start Guided Filing</a>
 </div>
 
-<h2>Line 2: Interest Income</h2>
-<div class="line">
-1. Money your bank pays you for saving.<br>
-2. Even small amounts must be included.<br>
-3. Found on 1099-INT forms.<br>
-4. Add all bank accounts together.
-<div class="tip">🦉 Tip: Every dollar counts, even pennies.</div>
-</div>
+<script>
+const steps = [
 
-<h2>Line 3: Dividends</h2>
-<div class="line">
-1. Money from stocks you own.<br>
-2. Companies pay you small rewards.<br>
-3. Reported on 1099-DIV forms.<br>
-4. Add all investment payouts.
-<div class="tip">🦉 Tip: Think of it as bonus money for being an owner.</div>
-</div>
+{
+title:"Welcome",
+text:`Hello! I’m Professor Owl 🦉. I will teach you taxes step-by-step.
+Most people think taxes are hard — they are NOT.
+They are just simple steps you follow one at a time.`,
+tip:"Think of this like following a recipe.",
+warning:"Do NOT try to understand everything at once."
+},
 
-<h2>Line 4: Retirement Income</h2>
-<div class="line">
-1. Money from pensions or retirement accounts.<br>
-2. Comes after you stop working.<br>
-3. Reported on 1099-R forms.<br>
-4. Enter total retirement income.
-<div class="tip">🦉 Tip: Often used by older taxpayers.</div>
-</div>
+{
+title:"Step 1 — Income (Big Picture)",
+text:`First we collect ALL your money.
+This includes your job, side jobs, and small earnings.`,
+tip:"Everything starts with income.",
+warning:"Most beginners forget side income."
+},
 
-<h2>Line 5: Social Security</h2>
-<div class="line">
-1. Government support payments.<br>
-2. Helps retired or disabled people.<br>
-3. Some may be taxable.<br>
-4. Enter only taxable portion.
-<div class="tip">🦉 Tip: Not all of this is taxed.</div>
-</div>
+{
+title:"W-2 Job Income",
+text:`Your main job gives you a W-2 form.
+This shows how much you earned for the year.`,
+tip:"This is usually your biggest number.",
+warning:"Copy it exactly — no guessing."
+},
 
-<h2>Line 6: Capital Gains</h2>
-<div class="line">
-1. Money from selling investments.<br>
-2. Example: buying low, selling high.<br>
-3. Includes stocks and crypto.<br>
-4. Report total profit.
-<div class="tip">🦉 Tip: Losses can sometimes help you.</div>
-</div>
+{
+title:"1099 Side Income",
+text:`If you worked apps, freelanced, or got paid cash,
+you must include it here.`,
+tip:"Side jobs still count.",
+warning:"This is the most commonly missed step."
+},
 
-<h2>Line 7: Other Income</h2>
-<div class="line">
-1. Extra money not listed above.<br>
-2. Side jobs or gig work.<br>
-3. Freelance or small tasks.<br>
-4. Add all leftover income.
-<div class="tip">🦉 Tip: Don’t forget small jobs.</div>
-</div>
+{
+title:"Interest & Small Money",
+text:`Banks may pay you interest on savings.
+Even small amounts must be included.`,
+tip:"Every dollar counts.",
+warning:"Even $1 must be reported."
+},
 
-<h2>Line 8: Total Income</h2>
-<div class="line">
-1. Add all income together.<br>
-2. This is your total yearly money.<br>
-3. Before deductions.<br>
-4. Called gross income.
-<div class="tip">🦉 Tip: Double-check your math carefully.</div>
-</div>
+{
+title:"Total Income",
+text:`Now we add everything together.
+This becomes your total income for the year.`,
+tip:"This is your starting point for taxes.",
+warning:"Double-check math carefully."
+},
 
-<h2>Line 9: Adjustments</h2>
-<div class="line">
-1. Subtract certain expenses.<br>
-2. Includes student loan interest.<br>
-3. Lowers taxable income.<br>
-4. Helps reduce taxes.
-<div class="tip">🦉 Tip: This step saves money.</div>
-</div>
+{
+title:"Adjustments",
+text:`Now we subtract allowed expenses.
+This includes student loan interest or retirement savings.`,
+tip:"This lowers your taxes.",
+warning:"Only approved items can be used."
+},
 
-<h2>Line 10: IRA Contributions</h2>
-<div class="line">
-1. Money saved for retirement.<br>
-2. Can reduce taxes.<br>
-3. Must follow limits.<br>
-4. Enter total contribution.
-<div class="tip">🦉 Tip: Helps future + current taxes.</div>
-</div>
+{
+title:"BIG CONFUSION ZONE ⚠️",
+text:`This is where most people get lost.
+They think they can subtract anything — but you cannot.`,
+tip:"Only IRS-approved deductions count.",
+warning:"Wrong deductions can cause issues."
+},
 
-<h2>Line 11: Business Deductions</h2>
-<div class="line">
-1. Expenses from work.<br>
-2. Supplies or tools.<br>
-3. Self-employment costs.<br>
-4. Subtract from income.
-<div class="tip">🦉 Tip: Keep receipts safe.</div>
-</div>
+{
+title:"Standard Deduction",
+text:`Most people use the standard deduction.
+It is a fixed amount that reduces taxable income.`,
+tip:"This is the easiest option.",
+warning:"Do NOT overthink this step."
+},
 
-<h2>Line 12: Standard Deduction</h2>
-<div class="line">
-1. Fixed deduction amount.<br>
-2. Easy option for most people.<br>
-3. No receipts needed.<br>
-4. Reduces taxable income.
-<div class="tip">🦉 Tip: Most beginners use this.</div>
-</div>
+{
+title:"Taxable Income",
+text:`Now we calculate what is left after deductions.
+This is the money that gets taxed.`,
+tip:"Less taxable income = less tax.",
+warning:"This number decides everything."
+},
 
-<h2>Line 13: Itemized Deductions</h2>
-<div class="line">
-1. Detailed expense list.<br>
-2. Includes medical, charity.<br>
-3. Must track receipts.<br>
-4. Choose if higher than standard.
-<div class="tip">🦉 Tip: Only use if it saves more.</div>
-</div>
+{
+title:"Tax Calculation",
+text:`The IRS applies tax rates to your income.
+Higher income = higher tax brackets.`,
+tip:"You usually don’t calculate this manually.",
+warning:"Software handles this for most people."
+},
 
-<h2>Line 14: Taxable Income</h2>
-<div class="line">
-1. Income after deductions.<br>
-2. Used to calculate tax.<br>
-3. Important number.<br>
-4. Lower = better.
-<div class="tip">🦉 Tip: This decides your tax level.</div>
-</div>
+{
+title:"Tax Credits",
+text:`Credits reduce your tax directly.
+Examples: child credit, education credit.`,
+tip:"Credits are powerful savings.",
+warning:"Don’t confuse credits with deductions."
+},
 
-<h2>Line 15: Tax Calculation</h2>
-<div class="line">
-1. Use IRS tax tables.<br>
-2. Based on income range.<br>
-3. Higher income = higher tax.<br>
-4. Find correct amount.
-<div class="tip">🦉 Tip: Software makes this easier.</div>
-</div>
+{
+title:"Payments Already Made",
+text:`Your employer already paid some taxes for you.
+This is taken from your paycheck.`,
+tip:"You may already have paid most tax.",
+warning:"Always check your W-2."
+},
 
-<h2>Line 16: Additional Taxes</h2>
-<div class="line">
-1. Special tax situations.<br>
-2. Self-employment tax.<br>
-3. Other required taxes.<br>
-4. Add if needed.
-<div class="tip">🦉 Tip: Not everyone has this.</div>
-</div>
+{
+title:"Final Calculation",
+text:`Now we compare:
+what you owe vs what you already paid.`,
+tip:"This decides refund or balance due.",
+warning:"This is the final step before result."
+},
 
-<h2>Line 17: Total Tax</h2>
-<div class="line">
-1. Add all taxes together.<br>
-2. Before credits.<br>
-3. Final tax amount.<br>
-4. Important total.
-<div class="tip">🦉 Tip: Double-check carefully.</div>
-</div>
+{
+title:"Refund or Owe",
+text:`If you paid too much → refund.
+If you paid too little → you owe money.`,
+tip:"Simple balance check.",
+warning:"No tricks here — just math."
+}
 
-<h2>Line 18: Child Tax Credit</h2>
-<div class="line">
-1. Money off taxes for kids.<br>
-2. Must meet rules.<br>
-3. Reduces tax bill.<br>
-4. Big savings.
-<div class="tip">🦉 Tip: One of the biggest credits.</div>
-</div>
+];
 
-<h2>Line 19: Education Credit</h2>
-<div class="line">
-1. Helps students.<br>
-2. Tuition-based credit.<br>
-3. Requires school forms.<br>
-4. Reduces taxes.
-<div class="tip">🦉 Tip: Use form 1098-T.</div>
-</div>
+let index = 0;
 
-<h2>Line 20: Other Credits</h2>
-<div class="line">
-1. Extra tax credits.<br>
-2. Energy, care, etc.<br>
-3. Check eligibility.<br>
-4. Subtract from tax.
-<div class="tip">🦉 Tip: Don’t miss free money.</div>
-</div>
+function render(){
+  const s = steps[index];
+  document.getElementById("stepBox").innerHTML = `
+    <h2>${s.title}</h2>
+    <p>${s.text}</p>
+    <div class="tip">🦉 Tip: ${s.tip}</div>
+    <div class="warning">⚠️ ${s.warning}</div>
+    <p>Step ${index+1} of ${steps.length}</p>
+  `;
 
-<h2>Line 21: Total Credits</h2>
-<div class="line">
-1. Add all credits.<br>
-2. Subtract from tax.<br>
-3. Reduces amount owed.<br>
-4. Important step.
-<div class="tip">🦉 Tip: Credits = savings.</div>
-</div>
+  document.getElementById("finalCTA").style.display =
+    (index === steps.length-1) ? "block" : "none";
+}
 
-<h2>Line 22: Withholding</h2>
-<div class="line">
-1. Tax already paid.<br>
-2. From your paycheck.<br>
-3. Shown on W-2.<br>
-4. Reduces balance.
-<div class="tip">🦉 Tip: You may already overpay.</div>
-</div>
+function nextStep(){
+  if(index < steps.length-1) index++;
+  render();
+}
 
-<h2>Line 23: Estimated Payments</h2>
-<div class="line">
-1. Paid during year.<br>
-2. For freelancers.<br>
-3. Quarterly payments.<br>
-4. Add total.
-<div class="tip">🦉 Tip: Self-employed people use this.</div>
-</div>
+function backStep(){
+  if(index > 0) index--;
+  render();
+}
 
-<h2>Line 24: Total Payments</h2>
-<div class="line">
-1. Add all payments.<br>
-2. Withholding + estimates.<br>
-3. Total paid tax.<br>
-4. Compare later.
-<div class="tip">🦉 Tip: Accuracy is key.</div>
-</div>
-
-<h2>Line 25: Final Comparison</h2>
-<div class="line">
-1. Compare tax vs payments.<br>
-2. Decide refund or owe.<br>
-3. Simple math step.<br>
-4. Important result.
-<div class="tip">🦉 Tip: This decides outcome.</div>
-</div>
-
-<h2>Line 26: Refund</h2>
-<div class="line">
-1. You get money back.<br>
-2. You paid too much.<br>
-3. IRS sends refund.<br>
-4. Choose direct deposit.
-<div class="tip">🦉 Tip: Faster if electronic.</div>
-</div>
-
-<h2>Line 27: Amount Owed</h2>
-<div class="line">
-1. You owe money.<br>
-2. Paid too little.<br>
-3. Must pay IRS.<br>
-4. Set payment plan if needed.
-<div class="tip">🦉 Tip: Don’t ignore bills.</div>
-</div>
-
-<h2>Line 28: Bank Info</h2>
-<div class="line">
-1. Routing number.<br>
-2. Account number.<br>
-3. For refund deposit.<br>
-4. Enter carefully.
-<div class="tip">🦉 Tip: One wrong number delays refund.</div>
-</div>
-
-<h2>Line 29: Payment Method</h2>
-<div class="line">
-1. How you pay IRS.<br>
-2. Online or mail.<br>
-3. Choose option.<br>
-4. Submit payment.
-<div class="tip">🦉 Tip: Online is fastest.</div>
-</div>
-
-<h2>Line 30: Review Return</h2>
-<div class="line">
-1. Check everything.<br>
-2. Look for mistakes.<br>
-3. Fix errors.<br>
-4. Final check.
-<div class="tip">🦉 Tip: Always review twice.</div>
-</div>
-
-<h2>Line 31: Sign Return</h2>
-<div class="line">
-1. You must sign.<br>
-2. Legal requirement.<br>
-3. Confirms truth.<br>
-4. Final approval.
-<div class="tip">🦉 Tip: Unsigned = invalid.</div>
-</div>
-
-<h2>Line 32: Spouse Signature</h2>
-<div class="line">
-1. If married filing jointly.<br>
-2. Both must sign.<br>
-3. Required step.<br>
-4. Legal confirmation.
-<div class="tip">🦉 Tip: Both signatures required.</div>
-</div>
-
-<h2>Line 33: Preparer Info</h2>
-<div class="line">
-1. If someone helped you.<br>
-2. Tax preparer info.<br>
-3. Optional step.<br>
-4. Adds accountability.
-<div class="tip">🦉 Tip: Only if used help.</div>
-</div>
-
-<h2>Line 34: SSN Check</h2>
-<div class="line">
-1. Check Social Security number.<br>
-2. Must be correct.<br>
-3. Avoid delays.<br>
-4. Very important.
-<div class="tip">🦉 Tip: One mistake causes rejection.</div>
-</div>
-
-<h2>Line 35: Filing Status</h2>
-<div class="line">
-1. Single or married.<br>
-2. Impacts taxes.<br>
-3. Choose correctly.<br>
-4. Affects refund.
-<div class="tip">🦉 Tip: Status changes tax rates.</div>
-</div>
-
-<h2>Line 36: Attach Forms</h2>
-<div class="line">
-1. Add W-2s.<br>
-2. Add 1099s.<br>
-3. Include documents.<br>
-4. Required for filing.
-<div class="tip">🦉 Tip: Missing forms delay processing.</div>
-</div>
-
-<h2>Line 37: Submit Return</h2>
-<div class="line">
-1. Send to IRS.<br>
-2. E-file or mail.<br>
-3. Processing begins.<br>
-4. Official submission.
-<div class="tip">🦉 Tip: E-file is fastest.</div>
-</div>
-
-<h2>Line 38: Save Copy</h2>
-<div class="line">
-1. Keep your return.<br>
-2. Store safely.<br>
-3. Needed for records.<br>
-4. Keep for years.
-<div class="tip">🦉 Tip: Always keep a backup copy.</div>
-</div>
-
-</div>
-
-<!-- CONCLUSION -->
-<div class="lesson">
-<h2>🎓 Final Conclusion</h2>
-<p>
-Great job! You learned how to complete a full tax return step-by-step like a simple school lesson. Taxes are just reading, adding, and following instructions.
-</p>
-<p>
-🦉 Professor Owl says: “If you can follow steps in class, you can do taxes.”
-</p>
-</div>
-
-<div style="text-align:center; margin-top:40px;">
-<a href="https://is.gd/SRCKpA" class="button">
-Start Filing Your Taxes Now
-</a>
-</div>
+render();
+</script>
 
 </body>
 </html>
