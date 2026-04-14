@@ -38,8 +38,13 @@
         }
 
         .professor {
-            width: 120px;
+            width: 100px;
             float: right;
+            margin: 0 0 10px 20px;
+        }
+
+        .professor-large {
+            width: 160px;
             margin: 0 0 10px 20px;
         }
 
@@ -66,17 +71,24 @@
             text-align:center;
             margin:20px 0;
             background:#1f4e79;
-            padding:10px;
+            padding:15px;
             border-radius:8px;
         }
 
         .logo-banner img {
-            max-height:70px;
+            max-height:100px;
             max-width:100%;
         }
 
+        .owl-in-tip {
+            width:70px;
+            margin:0 10px 10px 0;
+            float:left;
+        }
+
         @media (max-width:600px){
-            .professor {
+            .professor, .professor-large, .owl-in-tip {
+                width:90px;
                 float:none;
                 display:block;
                 margin:auto;
@@ -88,7 +100,7 @@
 
 <body>
 
-<!-- ★ Your logo banner at the top (update URLs below) -->
+<!-- ★ Big clickable logo at the top (update URLs below) -->
 <div class="logo-banner">
     <a href="https://YOUR_HOMEPAGE_URL" target="_blank">
         <img
@@ -98,19 +110,22 @@
     </a>
 </div>
 
-<!-- Professor Owl banner (with your affiliate link) -->
+<!-- Professor Owl banner + affiliate link -->
 <div class="banner">
     <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide">
-        <img src="https://7667.imgix.net/banners/54182.png" alt="Tax Guide Banner">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="professor-large">
     </a>
+    <img
+        src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png"
+        alt="Professor Owl"
+        class="professor"
+    >
 </div>
 
 <p>📅 Today is: <span id="currentDate"></span></p>
 <p class="countdown">⏰ Time until Tax Extension Deadline: <span id="countdown"></span></p>
 
 <h1>🦉 Professor Owl’s Easy Tax Guide</h1>
-
-<img src="thumbnail.jfif" alt="Professor Owl" class="professor">
 
 <h2>✅ PART 1 — Get Your Papers Ready</h2>
 
@@ -120,7 +135,10 @@
     <li>1099 = extra money (side jobs, bank interest)</li>
     <li>Other money (tips, small jobs)</li>
 </ul>
-<div class="tip"><strong>Tip:</strong> Put everything in one folder.</div>
+<div class="tip">
+    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+    <strong>Tip:</strong> Put everything in one folder.
+</div>
 
 <h3>Step 2: Deductions (Things that save money)</h3>
 <ul>
@@ -128,14 +146,20 @@
     <li>Medical bills</li>
     <li>School costs</li>
 </ul>
-<div class="tip"><strong>Tip:</strong> Keep receipts!</div>
+<div class="tip">
+    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+    <strong>Tip:</strong> Keep receipts!
+</div>
 
 <h3>Step 3: Personal Info</h3>
 <ul>
     <li>Social Security numbers</li>
     <li>Bank account</li>
 </ul>
-<div class="tip"><strong>Tip:</strong> Check numbers carefully.</div>
+<div class="tip">
+    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+    <strong>Tip:</strong> Check numbers carefully.
+</div>
 
 <h2>✅ PART 2 — Filling Out Your Taxes</h2>
 
@@ -147,7 +171,10 @@
     <li>Line 7: Social Security</li>
     <li>Line 8: Other income</li>
 </ul>
-<div class="extra-tip">Think of this like adding all your money together.</div>
+<div class="extra-tip">
+    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+    Think of this like adding all your money together.
+</div>
 
 <h3>Step 5: Adjust Your Income (Line 9)</h3>
 <ul>
@@ -155,7 +182,10 @@
     <li>IRA savings</li>
     <li>Business costs</li>
 </ul>
-<div class="tip">These lower your total income.</div>
+<div class="tip">
+    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+    These lower your total income.
+</div>
 
 <h3>Step 6: Find Your AGI</h3>
 <p>AGI = Total money − adjustments</p>
@@ -165,7 +195,10 @@
     <li>Standard deduction (easy)</li>
     <li>Itemized (more detailed)</li>
 </ul>
-<div class="tip">Pick the bigger one to save money.</div>
+<div class="tip">
+    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+    Pick the bigger one to save money.
+</div>
 
 <h3>Step 8: Calculate Tax (Lines 13–15)</h3>
 <ul>
@@ -179,7 +212,10 @@
     <li>Tax already paid</li>
     <li>Credits (money back)</li>
 </ul>
-<div class="extra-tip">Credits = money back!</div>
+<div class="extra-tip">
+    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
+    Credits = money back!
+</div>
 
 <h3>Step 10: Refund or Owe (Lines 21–24)</h3>
 <ul>
@@ -204,8 +240,9 @@
 </div>
 
 
-<!-- HERO section (affiliate link on CTA) -->
+<!-- HERO section (with big Professor Owl) -->
 <div class="banner">
+    <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="professor-large">
     <h1>How to File Taxes (2026 Guide for Beginners)</h1>
     <p>Learn exactly how to file your taxes step-by-step, avoid mistakes, and maximize your refund.</p>
 
@@ -250,9 +287,10 @@
     <p>Online filing is the fastest and easiest option.</p>
 </section>
 
-<!-- Mid CTA (same affiliate link) -->
+<!-- Mid CTA (with Professor Owl and affiliate link) -->
 <div style="text-align:center; margin:30px 0;">
     <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" class="button">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
         File Your Taxes Online in Minutes
     </a>
 </div>
@@ -292,9 +330,10 @@
     <p>Use deductions and credits to reduce your taxable income.</p>
 </section>
 
-<!-- Final CTA (same affiliate link) -->
+<!-- Final CTA (with Owl) -->
 <div style="text-align:center; margin:40px 0;">
     <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" class="button">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
         Get Your Maximum Tax Refund Now
     </a>
 </div>
@@ -302,6 +341,7 @@
 <!-- Quick Tax Cheat Sheet -->
 <div class="beginner-cheatsheet">
     <div style="background:#1f4e79; color:#ffffff; padding:15px; border-left:5px solid #ffcc00;">
+        <img src="https://github.com/brightlane/how-to-file-taxes/raw/main/professorowl.png" alt="Professor Owl" class="owl-in-tip">
         <h2>📝 Quick Tax Cheat Sheet for Beginners</h2>
         <ul>
             <li><strong>Step 1:</strong> Gather W-2, 1099, and receipts</li>
@@ -337,37 +377,4 @@
         <li><strong>Box 3 – Social Security:</strong> Money that counts for Social Security. Example: $12,000</li>
         <li><strong>Box 5 – Medicare:</strong> Money that counts for Medicare. Example: $12,000</li>
     </ul>
-    <p><strong>Tip:</strong> Think of Box 1 as “your take-home amount” and Box 2 as “money already paid for taxes.” Focus on these first.</p>
-</section>
-
-<!-- Never-fail filing steps -->
-<section class="never-fail-steps">
-    <h2>🚀 Never-Fail Filing Steps</h2>
-    <ol>
-        <li>Gather all forms: W-2, 1099, and receipts for deductions.</li>
-        <li>Add up all income to find your total earnings.</li>
-        <li>Subtract deductions to find your Adjusted Gross Income (AGI).</li>
-        <li>Check the tax table to find how much tax you owe.</li>
-        <li>Apply tax credits for any money back.</li>
-        <li>Sign your forms to make them official.</li>
-        <li>File online for the fastest refund.</li>
-    </ol>
-    <p><strong>Tip:</strong> Follow these steps in order, and you can file your taxes even if it’s your first time.</p>
-</section>
-
-<!-- FAQ + CTA -->
-<section class="faq-cta">
-    <h2>❓ FAQ: Never Filed Taxes Before?</h2>
-    <h3>What is a W-2?</h3>
-    <p>A form from your job showing your earnings and tax withheld.</p>
-    <h3>What is a 1099?</h3>
-    <p>A form for other money you earned like side jobs or bank interest.</p>
-    <h3>What is a tax table?</h3>
-    <p>A chart that tells you the tax rate for different amounts of income.</p>
-    <h3>Do I have to file if I earned very little?</h3>
-    <p>Sometimes you don’t, but filing can give you a refund.</p>
-
-    <!-- Call-to-action button (same affiliate link) -->
-    <div style="text-align:center; margin:30px 0;">
-        <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide" style="display:inline-block; background:#ffcc00; color:#0b2f5a; padding:15px 25px; font-size:18px; text-decoration:none; border-radius:8px;">
-            File Your Taxes Online Easily
+    <p><strong>Tip:</strong> Think of Box 1 as “your take-home amount” and Box 2 as “money already paid for taxes.”
