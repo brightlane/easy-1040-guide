@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professor Owl Tax Classroom</title>
+    <title>Professor Owl Tax Classroom: 1040 Mastery</title>
     <style>
         :root {
             --bg: #0b1220;
@@ -13,7 +13,6 @@
             --green: #22c55e;
             --text: #fff;
             --muted: #cbd5e1;
-            --link: #93c5fd;
             --accent: #f59e0b;
         }
 
@@ -28,221 +27,117 @@
             overflow-x: hidden;
         }
 
-        /* PROGRESS BAR */
         #progress-container {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: rgba(255,255,255,0.1);
-            z-index: 1100;
+            top: 0; left: 0; width: 100%; height: 6px;
+            background: rgba(255,255,255,0.05); z-index: 1100;
         }
         #progress-bar {
-            height: 100%;
-            background: var(--green);
-            width: 0%;
-            transition: width 0.4s ease;
-            box-shadow: 0 0 15px var(--green);
+            height: 100%; background: var(--green); width: 0%;
+            transition: width 0.4s ease; box-shadow: 0 0 15px var(--green);
         }
 
-        /* STICKY HEADER */
         .header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
             background: rgba(17, 24, 39, 0.98);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--green);
+            backdrop-filter: blur(10px); border-bottom: 2px solid var(--green);
         }
 
         .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px 20px;
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 1200px; margin: 0 auto; padding: 10px 20px;
         }
 
         .brand-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: inherit;
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none; color: inherit;
         }
 
         .logo-img {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            border: 2px solid var(--green);
-            object-fit: cover;
+            width: 42px; height: 42px; border-radius: 50%;
+            border: 2px solid var(--green); object-fit: cover;
         }
 
-        /* CLASSROOM CORE LAYOUT */
         .classroom-container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 30px;
-            align-items: start;
+            max-width: 1100px; margin: 40px auto; padding: 20px;
+            display: grid; grid-template-columns: 280px 1fr; gap: 30px;
         }
 
-        /* THE PERSISTENT TEACHER */
-        .teacher-sidebar {
-            position: sticky;
-            top: 100px;
-            text-align: center;
-        }
+        .teacher-sidebar { position: sticky; top: 100px; text-align: center; }
 
         .owl-teacher {
-            width: 180px;
-            height: 180px;
-            border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            object-fit: cover;
-            animation: breathe 3s ease-in-out infinite;
-            border: 3px solid var(--panel);
+            width: 220px; height: 220px; border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5); object-fit: cover;
+            border: 3px solid var(--panel); transition: transform 0.2s;
         }
 
         @keyframes breathe {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
+        .breathe { animation: breathe 3s ease-in-out infinite; }
 
-        /* OWL REACTION ANIMATION */
-        .hoot {
-            animation: hoot-anim 0.4s ease-out !important;
-        }
-
+        .hoot { animation: hoot-anim 0.4s ease-out; }
         @keyframes hoot-anim {
             0% { transform: scale(1); }
-            50% { transform: scale(1.15); border-color: var(--green); }
+            50% { transform: scale(1.1); border-color: var(--green); }
             100% { transform: scale(1); }
         }
 
         .speech-bubble {
-            background: var(--panel);
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 20px;
-            font-size: 0.95rem;
-            border-left: 4px solid var(--green);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            font-style: italic;
+            background: var(--panel); padding: 15px; border-radius: 12px;
+            margin-top: 20px; font-size: 0.95rem; border-left: 4px solid var(--green);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); font-style: italic;
         }
 
-        /* BLACKBOARD */
         .blackboard {
             background: linear-gradient(135deg, var(--board), var(--board2));
-            border: 12px solid #2d2d2d;
-            border-radius: 10px;
-            padding: 50px;
-            min-height: 400px;
+            border: 12px solid #2d2d2d; border-radius: 10px; padding: 50px;
+            min-height: 450px; display: flex; flex-direction: column; justify-content: center;
             box-shadow: inset 0 0 50px rgba(0,0,0,0.8), 0 20px 40px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .chalk-title {
-            font-family: 'Courier New', Courier, monospace;
-            color: var(--green);
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            font-family: 'Courier New', monospace; color: var(--green);
+            font-size: 2rem; margin-bottom: 20px; text-transform: uppercase;
         }
 
         .chalk-text {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.5rem;
-            line-height: 1.5;
-            color: #f0f0f0;
+            font-family: 'Courier New', monospace; font-size: 1.4rem;
+            line-height: 1.6; color: #f0f0f0;
         }
 
-        /* CONTROLS */
-        .controls {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
+        .controls { display: flex; gap: 15px; margin-top: 30px; }
 
         .btn {
-            padding: 18px 30px;
-            border-radius: 12px;
-            font-weight: 800;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 1rem;
-            text-transform: uppercase;
+            padding: 18px 30px; border-radius: 12px; font-weight: 800;
+            border: none; cursor: pointer; transition: all 0.2s;
+            font-size: 1rem; text-transform: uppercase;
         }
 
         .btn-next { background: var(--green); color: #000; flex: 2; }
         .btn-back { background: #374151; color: #fff; flex: 1; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* MOBILE ADAPTATION */
-        @media (max-width: 850px) {
-            .classroom-container {
-                grid-template-columns: 1fr;
-            }
-            .teacher-sidebar {
-                position: relative;
-                top: 0;
-                margin-bottom: 20px;
-            }
-            .owl-teacher {
-                width: 140px;
-                height: 140px;
-            }
-            .blackboard { padding: 30px; min-height: 300px; }
-            .chalk-title { font-size: 1.5rem; }
-            .chalk-text { font-size: 1.2rem; }
-        }
-
-        /* SCHEDULES & FOOTER */
         .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; max-width: 1100px; margin: 60px auto; padding: 0 20px;
         }
 
         .card {
-            background: var(--panel);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #1f2937;
-            position: relative;
-            overflow: hidden;
-            opacity: 0.7;
-        }
-
-        .card::after {
-            content: 'LOCKED';
-            position: absolute;
-            top: 15px;
-            right: -30px;
-            background: var(--accent);
-            color: #000;
-            padding: 5px 40px;
-            transform: rotate(35deg);
-            font-size: 10px;
-            font-weight: 900;
+            background: var(--panel); padding: 30px; border-radius: 15px;
+            border: 1px solid #1f2937; position: relative; overflow: hidden;
         }
 
         .footer {
-            padding: 100px 20px;
-            text-align: center;
-            background: #090e1a;
+            padding: 100px 20px; text-align: center; background: #090e1a;
             border-top: 1px solid #1f2937;
+        }
+
+        @media (max-width: 850px) {
+            .classroom-container { grid-template-columns: 1fr; }
+            .teacher-sidebar { position: relative; top: 0; margin-bottom: 20px; }
+            .blackboard { padding: 30px; min-height: 350px; }
         }
     </style>
 </head>
@@ -253,7 +148,7 @@
     <header class="header">
         <div class="header-inner">
             <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" class="brand-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" class="logo-img" alt="Owl Logo">
+                <img src="https://images.unsplash.com/photo-1544390906-5f5600643d93?auto=format&fit=crop&q=80&w=100&h=100" class="logo-img" alt="Owl Logo">
                 <span style="font-weight: 800;">Professor Owl Classroom</span>
             </a>
             <div style="color: var(--green); font-size: 12px; font-weight: 900;">LIVE SESSION</div>
@@ -263,16 +158,16 @@
     <main>
         <div class="classroom-container">
             <aside class="teacher-sidebar">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" id="owl" class="owl-teacher" alt="Professor Owl">
+                <img src="https://images.unsplash.com/photo-1544390906-5f5600643d93?auto=format&fit=crop&q=80&w=400&h=400" id="owl" class="owl-teacher breathe" alt="Professor Owl">
                 <div class="speech-bubble" id="speech">
-                    "Hoot! Ready to start? Let's look at Line 1."
+                    "Hoot! Welcome to class. Let's master the 1040 form together."
                 </div>
             </aside>
 
             <section>
                 <div class="blackboard" id="bb-inner">
-                    <div class="chalk-title" id="title"></div>
-                    <div class="chalk-text" id="text"></div>
+                    <div class="chalk-title" id="title">Orientation</div>
+                    <div class="chalk-text" id="text">Welcome to the Tax Classroom. We are going to walk through every line of the tax return so you can file with total confidence.</div>
                 </div>
 
                 <div class="controls">
@@ -289,8 +184,8 @@
         </section>
 
         <section class="footer">
-            <h2 style="margin-bottom: 25px;">Knowledge is Power. Accuracy is Money.</h2>
-            <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" class="btn btn-next" style="display:inline-block; text-decoration:none; width: auto;">Start Your Official Filing</a>
+            <h2 style="margin-bottom: 25px;">Ready to Start Filing?</h2>
+            <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide" class="btn btn-next" style="display:inline-block; text-decoration:none; width: auto;">Go to Official Filing Center</a>
             <p style="margin-top: 50px; opacity: 0.3; font-size: 0.8rem;">© 2026 Professor Owl Tax Guide · Official Affiliate Classroom</p>
         </section>
     </main>
@@ -299,13 +194,21 @@
 
     <script>
         const lessons = [
-            ["Line 1: Identity", "Your legal identity starts here. It's the 'Who' behind the taxes. Without this, the IRS can't process your refund!"],
-            ["Line 2: Filing Status", "Are you Single or Married? This is vital because it determines your tax brackets and deduction size."],
-            ["Line 3-7: Total Income", "This is where we count every dollar earned. It's the engine that powers your whole tax return."],
-            ["Line 12: Standard Deduction", "The IRS gives you a portion of income tax-free! This lowers your taxable total automatically."],
-            ["Line 15: Taxable Total", "After deductions, this is the amount the government actually looks at to calculate your bill."],
-            ["Line 24: The Final Tax", "Based on your income, this is the calculated amount for the year before payments are considered."],
-            ["Line 33: Your Refund", "If your withholdings were more than your tax, you get a refund. This is the best part of class!"]
+            ["Orientation", "Welcome to the Tax Classroom. Before we begin, remember: the 1040 form is a story of your year. We'll cover all 38 lines so you're ready for the Schedules."],
+            ["Lines 1a-1z: Wages & Salaries", "This is your primary income. From your W-2 to tips and household employee wages, this is where your earnings start."],
+            ["Lines 2-3: Interest & Dividends", "Money your money made. Taxable and tax-exempt interest (Line 2) and your stock dividends (Line 3)."],
+            ["Lines 4-6: Retirement Income", "Distributions from IRAs, Pensions, and Social Security. The system calculates what portion is actually taxable here."],
+            ["Line 8: Other Income", "This is a major hub! It pulls from Schedule 1. If you have a side hustle or gambling winnings, they meet here."],
+            ["Line 9: Total Income", "The 'Raw' total. This is the sum of every dollar that came in before the government applies any discounts."],
+            ["Line 11: Adjusted Gross Income (AGI)", "The most important number. Total income minus 'Adjustments' (like student loan interest). Your AGI determines your eligibility for many credits."],
+            ["Line 12: Standard Deduction", "Your tax shield. Most filers use the standard amount to lower their taxable income instantly without keeping receipts."],
+            ["Line 15: Taxable Income", "The bottom line. This is the exact amount the government applies tax rates to. Lowering this is the goal."],
+            ["Lines 16-24: Total Tax", "The calculation phase. We apply the brackets, add self-employment tax, and subtract non-refundable credits."],
+            ["Lines 25-31: Payments & Credits", "Your contributions. This includes what was taken from your paycheck (withholding) and refundable credits like the EITC."],
+            ["Line 33: Total Payments", "The grand total of everything you've already 'paid' into the system throughout the year."],
+            ["Lines 34-35: Your Refund", "The victory lap. If Line 33 is bigger than Line 24, the IRS owes YOU the difference. This is your refund."],
+            ["Lines 37-38: Amount Owed", "The balance due. If your payments didn't cover your tax, this is what you'll need to pay to settle the year."],
+            ["Graduation & Next Steps", "Congratulations! You've mastered the core 38 lines. You are now prepared for Schedule 1 (Extra Income), Schedule 2 (Additional Taxes), and Schedule 3 (Advanced Credits)."]
         ];
 
         let i = 0;
@@ -313,25 +216,21 @@
         function update() {
             const [t, txt] = lessons[i];
             const owl = document.getElementById('owl');
-            
-            // 9. ATTENTION SYSTEM (SMOOTH TRANSITION)
             const bb = document.getElementById('bb-inner');
+            
             bb.style.opacity = 0.5;
             
             setTimeout(() => {
                 document.getElementById('title').innerText = t;
                 document.getElementById('text').innerText = txt;
-                document.getElementById('speech').innerText = `"Professor Owl says: ${txt}"`;
+                document.getElementById('speech').innerText = `"Professor Owl says: ${txt.substring(0, 60)}..."`;
                 
-                // Progress Bar
                 const percent = ((i + 1) / lessons.length) * 100;
                 document.getElementById('progress-bar').style.width = percent + "%";
                 
                 bb.style.opacity = 1;
-
-                // 6. OWL REACTION
                 owl.classList.remove('hoot');
-                void owl.offsetWidth; // trigger reflow
+                void owl.offsetWidth;
                 owl.classList.add('hoot');
             }, 150);
         }
@@ -341,7 +240,6 @@
                 i++;
                 update();
             } else {
-                // Final Redirect to Affiliate
                 window.location.href = "https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide";
             }
         }
@@ -353,7 +251,6 @@
             }
         }
 
-        // Initialize
         update();
     </script>
 </body>
