@@ -7,55 +7,72 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: #7a1f1f;
+    background-color: #0b1e3d;
     color: #ffffff;
 }
 
-h1, h2 { color: #ffd6d6; }
-h3 { color: #ffffff; }
+/* HEADINGS */
+h1, h2 { color: #9fc3ff; }
 
-/* Lesson blocks */
+/* STICKY OWL */
+.owl-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    z-index: 999;
+}
+
+/* LESSON */
 .lesson {
-    background-color: #a83232;
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 12px;
+    background-color: #132a52;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 14px;
 }
 
-.lesson .prof {
-    width: 120px;
-    float: left;
-    margin-right: 20px;
-    border-radius: 12px;
-}
-
-.lesson::after {
-    content: "";
+/* OWL IMAGE */
+.prof {
+    width: 200px;
     display: block;
-    clear: both;
+    margin-bottom: 10px;
+    border-radius: 12px;
 }
 
-/* Tips */
-.tip, .extra-tip {
-    background-color: #872222;
-    border-left: 6px solid #ffd6d6;
+/* SPEECH BUBBLE */
+.speech {
+    background: #1c3c73;
     padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    position: relative;
 }
 
-.tip strong::before,
-.extra-tip strong::before {
-    content: "🦉 Professor Owl: ";
+.speech::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #1c3c73 transparent transparent transparent;
 }
 
-/* Button */
+/* LINE */
+.line {
+    background-color: #10264a;
+    padding: 12px;
+    margin: 10px 0;
+    border-left: 5px solid #9fc3ff;
+    border-radius: 8px;
+}
+
+/* CTA */
 .button {
-    background-color: #ffd6d6;
-    color:#7a1f1f;
+    background-color: #9fc3ff;
+    color:#0b1e3d;
     padding:15px 25px;
     text-decoration:none;
     font-size:18px;
@@ -63,13 +80,13 @@ h3 { color: #ffffff; }
     font-weight: bold;
 }
 
-/* Banner */
+/* BANNER */
 .banner {
     text-align:center;
     margin-bottom:20px;
 }
 
-/* Countdown */
+/* COUNTDOWN */
 .countdown {
     font-size:20px;
     margin-bottom:20px;
@@ -78,6 +95,9 @@ h3 { color: #ffffff; }
 </head>
 
 <body>
+
+<!-- STICKY OWL -->
+<img src="thumbnail.jfif" class="owl-fixed">
 
 <div class="banner">
 <a href="https://www.linkconnector.com/ta.php?lc=007949054182005142&atid=TaxGuide">
@@ -94,137 +114,89 @@ h3 { color: #ffffff; }
 <div class="lesson">
 <img src="thumbnail.jfif" class="prof">
 
-<h2>Lesson 1: What is the 1040?</h2>
+<div class="speech">Welcome! I’m Professor Owl. I’ll guide you line-by-line so you never get confused.</div>
 
-<p>
-Welcome! I’m Professor Owl, and I’ll guide you step-by-step through filing your taxes.
-</p>
+<h2>Lesson 1: Income Basics</h2>
 
-<p>
-The <strong>Form 1040</strong> is your main tax form. It combines all your information into one final result:
-</p>
-
-<p><strong>👉 Refund or amount owed</strong></p>
-
-<div class="tip"><strong></strong>Follow each lesson in order — that’s the easiest way to learn.</div>
+<div class="line"><strong>🦉 Line 1:</strong> Enter your W-2 wages here. This is your main job income.</div>
+<div class="line"><strong>🦉 Line 2:</strong> Add any additional income sources like freelance or side jobs.</div>
+<div class="line"><strong>🦉 Line 3:</strong> Combine everything — this becomes your total income.</div>
 </div>
 
 <!-- LESSON 2 -->
 <div class="lesson">
 <img src="thumbnail.jfif" class="prof">
 
-<h2>Lesson 2: Gather Your Documents</h2>
+<div class="speech">Before we go further, let’s make sure you have everything ready.</div>
 
-<h3>Income</h3>
-<ul>
-<li>W-2 = job income</li>
-<li>1099 = side income</li>
-<li>Other earnings</li>
-</ul>
+<h2>Lesson 2: Gather Documents</h2>
 
-<div class="tip"><strong></strong>Put everything in one place before starting.</div>
-
-<h3>Deductions</h3>
-<ul>
-<li>Charity</li>
-<li>Medical</li>
-<li>Education</li>
-</ul>
-
-<div class="tip"><strong></strong>Receipts help reduce your taxes.</div>
+<div class="line"><strong>🦉 Line 4:</strong> Collect all W-2 forms from employers.</div>
+<div class="line"><strong>🦉 Line 5:</strong> Add 1099 forms for side income.</div>
+<div class="line"><strong>🦉 Line 6:</strong> Include any other income you received this year.</div>
 </div>
 
 <!-- LESSON 3 -->
 <div class="lesson">
 <img src="thumbnail.jfif" class="prof">
 
-<h2>Lesson 3: Add Your Income</h2>
+<div class="speech">Now we calculate your full income.</div>
 
-<ul>
-<li>Line 4: Interest</li>
-<li>Line 5: Dividends</li>
-<li>Line 6: Retirement</li>
-<li>Line 7: Social Security</li>
-<li>Line 8: Other income</li>
-</ul>
+<h2>Lesson 3: Add Income</h2>
 
-<div class="extra-tip"><strong></strong>This is just simple addition.</div>
+<div class="line"><strong>🦉 Line 7:</strong> Enter interest income from banks.</div>
+<div class="line"><strong>🦉 Line 8:</strong> Add dividend income from investments.</div>
+<div class="line"><strong>🦉 Line 9:</strong> Include retirement income.</div>
+<div class="line"><strong>🦉 Line 10:</strong> Add Social Security benefits.</div>
 </div>
 
 <!-- LESSON 4 -->
 <div class="lesson">
 <img src="thumbnail.jfif" class="prof">
 
-<h2>Lesson 4: Adjust Income</h2>
+<div class="speech">Great! Now let’s lower your taxable income.</div>
 
-<ul>
-<li>Student loan interest</li>
-<li>IRA contributions</li>
-<li>Business expenses</li>
-</ul>
+<h2>Lesson 4: Adjustments</h2>
 
-<div class="tip"><strong></strong>These lower your taxable income.</div>
+<div class="line"><strong>🦉 Line 11:</strong> Deduct student loan interest if applicable.</div>
+<div class="line"><strong>🦉 Line 12:</strong> Add IRA contributions.</div>
+<div class="line"><strong>🦉 Line 13:</strong> Include business-related deductions.</div>
 </div>
 
 <!-- LESSON 5 -->
 <div class="lesson">
 <img src="thumbnail.jfif" class="prof">
 
+<div class="speech">This step can save you the most money.</div>
+
 <h2>Lesson 5: Deductions</h2>
 
-<ul>
-<li>Standard deduction</li>
-<li>Itemized deduction</li>
-</ul>
-
-<div class="tip"><strong></strong>Choose the one that saves you more money.</div>
+<div class="line"><strong>🦉 Line 14:</strong> Apply the standard deduction.</div>
+<div class="line"><strong>🦉 Line 15:</strong> Or use itemized deductions if higher.</div>
 </div>
 
 <!-- LESSON 6 -->
 <div class="lesson">
 <img src="thumbnail.jfif" class="prof">
 
+<div class="speech">Time to calculate what you owe.</div>
+
 <h2>Lesson 6: Tax & Credits</h2>
 
-<ul>
-<li>Calculate tax</li>
-<li>Apply credits</li>
-</ul>
-
-<div class="extra-tip"><strong></strong>Credits = money back.</div>
+<div class="line"><strong>🦉 Line 16:</strong> Calculate your tax based on income.</div>
+<div class="line"><strong>🦉 Line 17:</strong> Subtract credits like child tax credit.</div>
 </div>
 
 <!-- LESSON 7 -->
 <div class="lesson">
 <img src="thumbnail.jfif" class="prof">
 
+<div class="speech">Final step — you’re almost done!</div>
+
 <h2>Lesson 7: Final Result</h2>
 
-<ul>
-<li>Refund → you get paid</li>
-<li>Owe → you pay</li>
-</ul>
-
-<div class="tip"><strong></strong>Always double-check your numbers.</div>
-</div>
-
-<!-- FINAL LESSON -->
-<div class="lesson">
-<img src="thumbnail.jfif" class="prof">
-
-<h2>Final Lesson: What Comes Next</h2>
-
-<p>You’ve completed the core Form 1040.</p>
-
-<ul>
-<li><strong>Schedule 1</strong> → Extra income & adjustments</li>
-<li><strong>Schedule 2</strong> → Additional taxes</li>
-<li><strong>Schedule 3</strong> → Extra credits</li>
-</ul>
-
-<div class="tip"><strong></strong>These are add-ons to your 1040.</div>
-
-<p><strong>👉 Next, we’ll go through these step-by-step.</strong></p>
+<div class="line"><strong>🦉 Line 18:</strong> If credits exceed tax, you get a refund.</div>
+<div class="line"><strong>🦉 Line 19:</strong> If not, this is what you owe.</div>
 </div>
 
 <!-- CTA -->
