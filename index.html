@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Professor Owl Classroom</title>
+<title>Professor Owl Tax Classroom</title>
 
 <style>
 body {
@@ -13,16 +13,16 @@ body {
   color: white;
 }
 
-/* ================= HEADER ================= */
+/* ================= STICKY HEADER ================= */
 .header {
   position: sticky;
   top: 0;
   z-index: 999;
   background: #111827;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
+  justify-content: space-between;
+  padding: 10px 14px;
   border-bottom: 2px solid #22c55e;
 }
 
@@ -44,10 +44,10 @@ body {
 /* ================= HERO ================= */
 .hero {
   text-align: center;
-  padding: 25px 15px;
+  padding: 25px 10px;
 }
 
-.owl {
+.hero img {
   width: 110px;
   animation: float 3s ease-in-out infinite;
 }
@@ -57,14 +57,14 @@ body {
   50% { transform: translateY(-10px); }
 }
 
-/* ================= BOARD ================= */
+/* ================= BLACKBOARD ================= */
 .board {
   max-width: 900px;
   margin: 20px auto;
   background: #14532d;
+  border: 3px solid #22c55e;
   border-radius: 10px;
   padding: 20px;
-  border: 3px solid #22c55e;
   min-height: 120px;
 }
 
@@ -104,9 +104,9 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
-  padding: 20px;
   max-width: 1000px;
   margin: auto;
+  padding: 20px;
 }
 
 .card {
@@ -125,9 +125,9 @@ button:hover {
 
 .cta a {
   background: #22c55e;
+  color: black;
   padding: 12px 18px;
   border-radius: 8px;
-  color: black;
   text-decoration: none;
   font-weight: bold;
 }
@@ -140,27 +140,27 @@ button:hover {
 <div class="header">
   <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="owl">
-    Professor Owl Classroom
+    Professor Owl Tax Classroom
   </a>
 </div>
 
 <!-- ================= HERO ================= -->
 <div class="hero">
-  <img class="owl" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="Professor Owl">
-  <h1>Interactive Learning Classroom</h1>
-  <p>Step-by-step guided learning experience</p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="owl">
+  <h1>Professor Owl Classroom</h1>
+  <p>Step-by-step guided learning system</p>
 </div>
 
-<!-- ================= BOARD ================= -->
+<!-- ================= BLACKBOARD ================= -->
 <div class="board">
-  <div class="title" id="title">Loading...</div>
-  <div class="text" id="text">Preparing lesson...</div>
+  <div class="title" id="title">Loading Lesson...</div>
+  <div class="text" id="text">Please wait...</div>
 </div>
 
 <!-- ================= CONTROLS ================= -->
 <div class="controls">
-  <button onclick="prevLesson()">⬅ Back</button>
-  <button onclick="nextLesson()">Next ➡</button>
+  <button onclick="prev()">⬅ Back</button>
+  <button onclick="next()">Next ➡</button>
 </div>
 
 <!-- ================= SCHEDULE ================= -->
@@ -181,64 +181,59 @@ button:hover {
 document.addEventListener("DOMContentLoaded", function () {
 
   const lessons = [
-    ["Identity Basics", "Understanding who the tax system applies to."],
-    ["Filing Overview", "Why annual reporting exists."],
+    ["Identity Basics", "Understanding who the system applies to."],
+    ["Filing Overview", "Why yearly reporting exists."],
     ["Income Concept", "Money earned from work or other sources."],
     ["Multiple Income Sources", "Different ways income appears."],
-    ["Income Summary", "Combining all income into one picture."],
-    ["Adjustment Idea", "Why income may be adjusted."],
-    ["Fairness Principle", "Why tax systems aim for balance."],
-    ["Deduction Concept", "Ways income may be reduced."],
+    ["Income Summary", "Combining all income."],
+    ["Adjustment Idea", "Why numbers change."],
+    ["Fairness Principle", "System balance concept."],
+    ["Deduction Concept", "Reducing taxable amount."],
     ["Standard vs Options", "Different deduction methods."],
     ["Taxable Income", "Income used for calculation."],
-    ["System Activation", "Where tax rules begin applying."],
-    ["Progressive Structure", "Higher income treated differently."],
+    ["System Activation", "When rules apply."],
+    ["Progressive Structure", "Higher income treatment."],
     ["Calculation Flow", "How tax math works."],
-    ["Preliminary Result", "First estimate."],
-    ["Adjustment Layer", "Refinements to results."],
-    ["Credit Concept", "Direct tax reductions."],
-    ["Refund Idea", "Overpayment return concept."],
-    ["Payment System", "Money paid during the year."],
-    ["Withholding Concept", "Automatic tax payments."],
+    ["Preliminary Result", "Initial outcome."],
+    ["Adjustment Layer", "Refining calculations."],
+    ["Credit Concept", "Direct reductions."],
+    ["Refund Idea", "Overpayment return."],
+    ["Payment System", "Money paid during year."],
+    ["Withholding Concept", "Automatic payments."],
     ["Tracking System", "Recording payments."],
     ["Comparison Stage", "Matching owed vs paid."],
-    ["Refund Outcome", "Money returned if overpaid."],
-    ["Balance Due", "Money still owed."],
-    ["Accuracy Importance", "Why correct data matters."],
-    ["Verification System", "Cross-checking records."],
-    ["Correction Stage", "Fixing errors."],
+    ["Refund Outcome", "Money returned."],
+    ["Balance Due", "Remaining amount owed."],
+    ["Accuracy Importance", "Why correctness matters."],
+    ["Verification System", "Checking data."],
+    ["Correction Stage", "Fixing issues."],
     ["Validation Step", "Final confirmation."],
-    ["Submission", "Sending for processing."],
+    ["Submission", "Sending data."],
     ["Processing", "System review."],
-    ["Review Stage", "Checking details."],
-    ["Error Detection", "Finding issues."],
-    ["Correction Review", "Fixing flagged data."],
-    ["Approval Stage", "Acceptance step."],
-    ["Final Result", "Outcome of process."],
+    ["Review Stage", "Checking return."],
+    ["Error Detection", "Finding mistakes."],
+    ["Correction Review", "Fixing issues."],
+    ["Approval Stage", "Accepted return."],
+    ["Final Result", "Outcome reached."],
     ["Record Storage", "Saving history."],
     ["Audit Concept", "Possible review."],
     ["Completion", "Process finished."],
-    ["Big Picture", "How the system works overall."]
+    ["Big Picture", "How system works overall."]
   ];
 
   let i = 0;
 
   function render() {
-    const t = document.getElementById("title");
-    const x = document.getElementById("text");
-
-    if (!t || !x) return;
-
-    t.innerText = lessons[i][0];
-    x.innerText = lessons[i][1];
+    document.getElementById("title").innerText = lessons[i][0];
+    document.getElementById("text").innerText = lessons[i][1];
   }
 
-  window.nextLesson = function () {
+  window.next = function () {
     if (i < lessons.length - 1) i++;
     render();
   };
 
-  window.prevLesson = function () {
+  window.prev = function () {
     if (i > 0) i--;
     render();
   };
