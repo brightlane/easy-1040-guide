@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Professor Owl Tax Classroom</title>
+<title>Professor Owl Classroom</title>
 
 <style>
 body {
@@ -27,31 +27,28 @@ body {
 }
 
 .header a {
-  color: white;
   text-decoration: none;
-}
-
-.brand {
+  color: white;
+  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: bold;
 }
 
-.brand img {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+.header img {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
 }
 
 /* ================= HERO ================= */
 .hero {
   text-align: center;
-  padding: 30px 15px;
+  padding: 25px 15px;
 }
 
 .owl {
-  width: 120px;
+  width: 110px;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -69,7 +66,6 @@ body {
   padding: 20px;
   border: 3px solid #22c55e;
   min-height: 120px;
-  transition: 0.3s ease;
 }
 
 .title {
@@ -80,6 +76,7 @@ body {
 .text {
   margin-top: 10px;
   color: #d1fae5;
+  line-height: 1.4;
 }
 
 /* ================= CONTROLS ================= */
@@ -117,7 +114,7 @@ button:hover {
   padding: 15px;
   border-radius: 10px;
   border-left: 4px solid #22c55e;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 /* ================= CTA ================= */
@@ -141,9 +138,9 @@ button:hover {
 
 <!-- ================= HEADER ================= -->
 <div class="header">
-  <a class="brand" href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="Owl">
-    Professor Owl Tax Classroom
+  <a href="https://www.linkconnector.com/ta.php?lc=007949054186005142&atid=ProfessorOwlTaxGuide">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cute_Barn_Owl.jpg" alt="owl">
+    Professor Owl Classroom
   </a>
 </div>
 
@@ -156,8 +153,8 @@ button:hover {
 
 <!-- ================= BOARD ================= -->
 <div class="board">
-  <div class="title" id="title">Welcome to Class 🦉</div>
-  <div class="text" id="text">Click Next to begin your lesson journey.</div>
+  <div class="title" id="title">Loading...</div>
+  <div class="text" id="text">Preparing lesson...</div>
 </div>
 
 <!-- ================= CONTROLS ================= -->
@@ -166,7 +163,7 @@ button:hover {
   <button onclick="nextLesson()">Next ➡</button>
 </div>
 
-<!-- ================= SCHEDULE PREVIEW ================= -->
+<!-- ================= SCHEDULE ================= -->
 <div class="schedule">
   <div class="card">📘 Schedule 1<br>Extra Income Concepts</div>
   <div class="card">📗 Schedule 2<br>Tax Adjustments Concepts</div>
@@ -181,65 +178,73 @@ button:hover {
 </div>
 
 <script>
-const lessons = [
-  ["Identity Basics", "Understanding who the system applies to."],
-  ["Filing Overview", "Why annual reporting exists."],
-  ["Income Concept", "Money earned from work or other sources."],
-  ["Multiple Income Sources", "Different ways income can appear."],
-  ["Income Summary", "Combining all income into one picture."],
-  ["Adjustment Idea", "Why income may be adjusted."],
-  ["Fairness Principle", "Why tax systems aim for balance."],
-  ["Deduction Concept", "Ways income may be reduced."],
-  ["Standard vs Options", "Different deduction approaches."],
-  ["Taxable Income", "Income used for calculation."],
-  ["System Activation", "Where tax rules begin applying."],
-  ["Progressive Structure", "Higher income treated differently."],
-  ["Calculation Flow", "How tax math is structured."],
-  ["Preliminary Result", "First estimated outcome."],
-  ["Adjustment Layer", "Refinements to calculations."],
-  ["Credit Concept", "Direct reductions to tax owed."],
-  ["Refund Idea", "When payments exceed obligations."],
-  ["Payment System", "Money paid throughout the year."],
-  ["Withholding Concept", "Automatic payments from income."],
-  ["Tracking System", "Recording all payments."],
-  ["Comparison Stage", "Matching owed vs paid."],
-  ["Refund Outcome", "Money returned if overpaid."],
-  ["Balance Due", "Money still owed."],
-  ["Accuracy Importance", "Why correct data matters."],
-  ["Verification System", "Cross-checking information."],
-  ["Correction Stage", "Fixing errors if found."],
-  ["Validation Step", "Final confirmation."],
-  ["Submission", "Sending data for processing."],
-  ["Processing", "System review phase."],
-  ["Review Stage", "Checking details."],
-  ["Error Detection", "Finding inconsistencies."],
-  ["Correction Review", "Fixing flagged issues."],
-  ["Approval Stage", "Accepting valid data."],
-  ["Final Result", "Outcome of system process."],
-  ["Record Storage", "Saving history."],
-  ["Audit Concept", "Possible future review."],
-  ["Completion", "Process finished."],
-  ["Big Picture", "How the system works overall."]
-];
+document.addEventListener("DOMContentLoaded", function () {
 
-let i = 0;
+  const lessons = [
+    ["Identity Basics", "Understanding who the tax system applies to."],
+    ["Filing Overview", "Why annual reporting exists."],
+    ["Income Concept", "Money earned from work or other sources."],
+    ["Multiple Income Sources", "Different ways income appears."],
+    ["Income Summary", "Combining all income into one picture."],
+    ["Adjustment Idea", "Why income may be adjusted."],
+    ["Fairness Principle", "Why tax systems aim for balance."],
+    ["Deduction Concept", "Ways income may be reduced."],
+    ["Standard vs Options", "Different deduction methods."],
+    ["Taxable Income", "Income used for calculation."],
+    ["System Activation", "Where tax rules begin applying."],
+    ["Progressive Structure", "Higher income treated differently."],
+    ["Calculation Flow", "How tax math works."],
+    ["Preliminary Result", "First estimate."],
+    ["Adjustment Layer", "Refinements to results."],
+    ["Credit Concept", "Direct tax reductions."],
+    ["Refund Idea", "Overpayment return concept."],
+    ["Payment System", "Money paid during the year."],
+    ["Withholding Concept", "Automatic tax payments."],
+    ["Tracking System", "Recording payments."],
+    ["Comparison Stage", "Matching owed vs paid."],
+    ["Refund Outcome", "Money returned if overpaid."],
+    ["Balance Due", "Money still owed."],
+    ["Accuracy Importance", "Why correct data matters."],
+    ["Verification System", "Cross-checking records."],
+    ["Correction Stage", "Fixing errors."],
+    ["Validation Step", "Final confirmation."],
+    ["Submission", "Sending for processing."],
+    ["Processing", "System review."],
+    ["Review Stage", "Checking details."],
+    ["Error Detection", "Finding issues."],
+    ["Correction Review", "Fixing flagged data."],
+    ["Approval Stage", "Acceptance step."],
+    ["Final Result", "Outcome of process."],
+    ["Record Storage", "Saving history."],
+    ["Audit Concept", "Possible review."],
+    ["Completion", "Process finished."],
+    ["Big Picture", "How the system works overall."]
+  ];
 
-function render() {
-  document.getElementById("title").innerText = lessons[i][0];
-  document.getElementById("text").innerText = lessons[i][1];
-}
+  let i = 0;
 
-function nextLesson() {
-  if (i < lessons.length - 1) i++;
+  function render() {
+    const t = document.getElementById("title");
+    const x = document.getElementById("text");
+
+    if (!t || !x) return;
+
+    t.innerText = lessons[i][0];
+    x.innerText = lessons[i][1];
+  }
+
+  window.nextLesson = function () {
+    if (i < lessons.length - 1) i++;
+    render();
+  };
+
+  window.prevLesson = function () {
+    if (i > 0) i--;
+    render();
+  };
+
   render();
-}
-
-function prevLesson() {
-  if (i > 0) i--;
-  render();
-}
-
-render();
+});
 </script>
 
 </body>
