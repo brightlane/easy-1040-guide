@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>1040 Beginner Line-by-Line Guide - Professor Owl</title>
+<title>1040 Beginner Guide - Professor Owl</title>
 
 <style>
 body {
@@ -14,7 +14,7 @@ body {
     color: #ffffff;
 }
 
-h1, h2, h3 { color: #ffcc00; }
+h1, h2 { color: #ffcc00; }
 
 .tip {
     background:#1f4e79;
@@ -23,135 +23,172 @@ h1, h2, h3 { color: #ffcc00; }
     margin:10px 0;
 }
 
-/* 🦉 100× HERO OWL */
+/* 🦉 HERO OWL */
 .owl-hero {
-    width: 100%;
-    text-align: center;
-    background: #0b2f5a;
-    padding: 10px 0 30px 0;
+    text-align:center;
+    padding:10px 0 20px;
 }
 
 .owl-hero img {
-    width: 100%;
-    max-width: 1600px;   /* 🔥 MASSIVE HERO SIZE */
-    height: auto;
-    cursor: pointer;
-    display:block;
-    margin:0 auto;
-    border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
-    transition: transform 0.3s ease;
+    width:100%;
+    max-width:1400px;
+    cursor:pointer;
+    border-radius:18px;
+    box-shadow:0 12px 40px rgba(0,0,0,0.5);
+    transition:transform 0.3s ease;
 }
 
 .owl-hero img:hover {
-    transform: scale(1.03);
+    transform:scale(1.03);
 }
 
-.section {
-    margin: 25px 0;
-    padding: 15px;
-    background: rgba(255,255,255,0.05);
-    border-left: 4px solid #ffcc00;
+/* 🧠 TEACHER BOX */
+.owl-teacher {
+    background:#1f4e79;
+    padding:20px;
+    border-left:5px solid #ffcc00;
+    border-radius:10px;
+    margin:20px 0;
+    text-align:center;
+}
+
+.owl-teacher img {
+    width:180px;
+    cursor:pointer;
+    transition:transform 0.3s ease;
+}
+
+.owl-teacher img:hover {
+    transform:scale(1.05);
+}
+
+.owl-speech {
+    background:#0b2f5a;
+    padding:15px;
+    margin-top:10px;
+    border-radius:8px;
+    font-size:18px;
+}
+
+.owl-btn {
+    margin-top:10px;
+    background:#ffcc00;
+    color:#0b2f5a;
+    padding:12px 18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.owl-progress {
+    height:10px;
+    background:#0b2f5a;
+    margin-top:10px;
+    border-radius:5px;
+    overflow:hidden;
+}
+
+#bar {
+    height:100%;
+    width:0%;
+    background:#ffcc00;
+    transition:width 0.3s ease;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🦉 BIG CLICKABLE OWL (AFFILIATE HERO) -->
+<!-- 🦉 HERO OWL (CLICKABLE AFFILIATE) -->
 <div class="owl-hero">
   <a href="https://is.gd/SRCKpA" target="_blank">
-    <img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png"
-         alt="Professor Owl 1040 Guide">
+    <img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png">
   </a>
 </div>
 
-<h1>🦉 Professor Owl’s Line-by-Line 1040 Guide (Beginner Version)</h1>
+<h1>🦉 Professor Owl’s Line-by-Line 1040 Guide</h1>
 
 <div class="tip">
-This guide breaks the 1040 form into simple steps so anyone can understand it.
+Learn how to fill out your 1040 step-by-step with Professor Owl.
 </div>
 
-<!-- LINE BY LINE SYSTEM -->
+<!-- 🧠 INTERACTIVE TEACHER -->
+<div class="owl-teacher">
 
-<div class="section">
-<h2>📄 Step 1: Personal Info (Top of Form)</h2>
-<p>👉 Your name, address, and Social Security number.</p>
-<p><b>Why it matters:</b> This tells the IRS who you are.</p>
+  <a href="https://is.gd/SRCKpA" target="_blank">
+    <img src="https://brightlane.github.io/how-to-file-taxes/professorowl.png">
+  </a>
+
+  <div class="owl-speech" id="speech">
+    Click “Next Lesson” to start learning your 1040 🦉
+  </div>
+
+  <button class="owl-btn" onclick="nextLesson()">Next Lesson →</button>
+
+  <div class="owl-progress">
+    <div id="bar"></div>
+  </div>
+
 </div>
 
-<div class="section">
-<h2>💼 Step 2: Line 1 – Wages</h2>
-<p>Enter your W-2 income (job earnings).</p>
-<p><b>Example:</b> $25,000 from your job</p>
-</div>
+<!-- 📘 CONTENT -->
+<h2>📄 Line 1: Wages</h2>
+<p>Your job income from W-2 forms.</p>
 
-<div class="section">
-<h2>🏦 Step 3: Lines 2–8 – Other Income</h2>
-<p>Includes interest, dividends, freelance, and side jobs.</p>
-<p><b>Example:</b> bank interest or 1099 income</p>
-</div>
+<h2>🏦 Lines 2–8: Other Income</h2>
+<p>Interest, dividends, side jobs, freelance.</p>
 
-<div class="section">
-<h2>➕ Step 4: Line 9 – Total Income</h2>
-<p>Add all income together.</p>
-<p><b>Formula:</b> Wages + Other income</p>
-</div>
+<h2>➕ Line 9: Total Income</h2>
+<p>Add everything together.</p>
 
-<div class="section">
-<h2>🧾 Step 5: Adjustments (Lines 10–11)</h2>
-<p>Subtract things like student loan interest or retirement contributions.</p>
-<p><b>Result:</b> Lower taxable income</p>
-</div>
+<h2>🧾 Adjustments</h2>
+<p>Subtract student loans, retirement contributions.</p>
 
-<div class="section">
-<h2>📊 Step 6: Line 11 – AGI (Adjusted Gross Income)</h2>
-<p>This is your “true income” after adjustments.</p>
-</div>
+<h2>📊 AGI</h2>
+<p>Your adjusted gross income.</p>
 
-<div class="section">
-<h2>📉 Step 7: Line 12 – Deductions</h2>
-<p>Choose:</p>
-<ul>
-<li>Standard deduction (most people)</li>
-<li>Itemized deductions (if higher)</li>
-</ul>
-</div>
+<h2>📉 Deductions</h2>
+<p>Standard or itemized deductions.</p>
 
-<div class="section">
-<h2>💰 Step 8: Line 16 – Tax Amount</h2>
-<p>This is how much tax you owe before credits.</p>
-</div>
+<h2>💰 Tax</h2>
+<p>Calculate what you owe.</p>
 
-<div class="section">
-<h2>🎯 Step 9: Credits (Line 19+)</h2>
-<p>Credits reduce your tax bill directly.</p>
-<p><b>Example:</b> Child tax credit, education credit</p>
-</div>
+<h2>🎯 Credits</h2>
+<p>Reduce your tax bill.</p>
 
-<div class="section">
-<h2>💳 Step 10: Payments (Line 25–33)</h2>
-<p>Shows tax already paid through withholding or estimates.</p>
-</div>
+<h2>💳 Payments</h2>
+<p>Taxes already paid.</p>
 
-<div class="section">
-<h2>📦 Step 11: Final Result (Refund or Owe)</h2>
-<p>If you paid too much → refund</p>
-<p>If you paid too little → you owe</p>
-</div>
+<h2>📦 Final Result</h2>
+<p>Refund or amount owed.</p>
 
-<div class="section">
-<h2>🖊️ Step 12: Sign and Submit</h2>
-<p>Always sign your return or it is invalid.</p>
-</div>
+<script>
+const lessons = [
+"🦉 Welcome! Let’s learn your 1040 step-by-step.",
+"Step 1: Gather W-2 and 1099 forms.",
+"Step 2: Add all your income together.",
+"Step 3: Subtract deductions.",
+"Step 4: Calculate AGI.",
+"Step 5: Choose standard or itemized deduction.",
+"Step 6: Calculate tax owed.",
+"Step 7: Apply credits.",
+"Step 8: Compare payments vs tax.",
+"Final Step: Refund or amount owed."
+];
 
-<!-- CTA -->
-<div style="text-align:center; margin:40px 0;">
-<a href="https://is.gd/SRCKpA"
-   style="background:#ffcc00; color:#0b2f5a; padding:15px 25px; font-size:18px; text-decoration:none; border-radius:8px;">
-👉 File Your Taxes Online With Help
-</a>
-</div>
+let i = 0;
+
+function nextLesson() {
+  document.getElementById("speech").innerText = lessons[i];
+
+  let progress = ((i + 1) / lessons.length) * 100;
+  document.getElementById("bar").style.width = progress + "%";
+
+  i++;
+  if(i >= lessons.length) i = 0;
+}
+</script>
 
 </body>
 </html>
