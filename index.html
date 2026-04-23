@@ -1,38 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Professor Tax Guide</title>
+  <title>Professor Taxworth - Interactive 1040 Guide</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #0b2d5f;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #123a7a;
+      position: sticky;
+      top: 0;
+    }
+
+    #clock {
+      font-size: 14px;
+      margin-top: 5px;
+      color: #ffd700;
+    }
+
+    .line {
+      background: #163d73;
+      margin: 10px 0;
+      padding: 15px;
+      border-left: 5px solid #ffd700;
+      border-radius: 8px;
+    }
+
+    .line h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #ffd700;
+    }
+
+    .schedule {
+      background: #1c4a8a;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    #owl-avatar {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>🦉 Professor Taxworth</h1>
-    <div id="clock"></div>
-  </header>
+<header>
+  <h1>🦉 Professor Taxworth — Form 1040 Live Tutor</h1>
+  <div id="clock"></div>
+</header>
 
-  <!-- FORM 1040 STEPS -->
-  <section>
-    <h2>Line 1 — Wages</h2>
-    <p>Enter your W-2 income here...</p>
-  </section>
+<!-- 🧾 FORM 1040 LINES -->
 
-  <section>
-    <h2>Line 2 — Interest</h2>
-    <p>Bank interest goes here...</p>
-  </section>
+<div class="line"><h2>Line 1 — Wages</h2><p>W-2 income from jobs</p></div>
+<div class="line"><h2>Line 2 — Interest</h2><p>Bank savings interest</p></div>
+<div class="line"><h2>Line 3 — Dividends</h2><p>Stock earnings</p></div>
+<div class="line"><h2>Line 4 — IRA Distributions</h2><p>Retirement withdrawals</p></div>
+<div class="line"><h2>Line 5 — Pensions</h2><p>Pension income</p></div>
+<div class="line"><h2>Line 6 — Social Security</h2><p>SSA benefits</p></div>
+<div class="line"><h2>Line 7 — Capital Gains</h2><p>Investment profit/loss</p></div>
+<div class="line"><h2>Line 8 — Other Income</h2><p>1099 / side jobs</p></div>
+<div class="line"><h2>Line 9 — Total Income</h2><p>All income combined</p></div>
 
-  <!-- OWL PLACEHOLDER -->
-  <div id="owl-avatar">🦉</div>
+<div class="line"><h2>Line 10 — Adjustments</h2><p>Schedule 1 deductions</p></div>
+<div class="line"><h2>Line 11 — AGI</h2><p>Adjusted Gross Income</p></div>
 
-  <!-- SCRIPT (ONLY ONCE) -->
-  <script>
-    setInterval(() => {
-      document.getElementById("clock").innerText =
-        new Date().toLocaleString();
-    }, 1000);
-  </script>
+<div class="line"><h2>Line 12 — Standard/Itemized Deduction</h2></div>
+<div class="line"><h2>Line 13 — QBI Deduction</h2></div>
+<div class="line"><h2>Line 14 — Total Deductions</h2></div>
+<div class="line"><h2>Line 15 — Taxable Income</h2></div>
+
+<div class="line"><h2>Line 16 — Tax</h2></div>
+<div class="line"><h2>Line 17 — Additional Taxes</h2></div>
+
+<div class="line"><h2>Line 18 — Child Tax Credit</h2></div>
+<div class="line"><h2>Line 19 — Education Credit</h2></div>
+<div class="line"><h2>Line 20 — Retirement Credit</h2></div>
+<div class="line"><h2>Line 21 — Other Credits</h2></div>
+<div class="line"><h2>Line 22 — Total Credits</h2></div>
+
+<div class="line"><h2>Line 23 — Withholding</h2></div>
+<div class="line"><h2>Line 24 — Estimated Payments</h2></div>
+<div class="line"><h2>Line 25 — Earned Income Credit</h2></div>
+<div class="line"><h2>Line 26 — Additional Child Credit</h2></div>
+<div class="line"><h2>Line 27 — Other Payments</h2></div>
+<div class="line"><h2>Line 28 — Total Payments</h2></div>
+
+<div class="line"><h2>Line 29 — Refund Calculation</h2></div>
+<div class="line"><h2>Line 30 — Refund Amount</h2></div>
+<div class="line"><h2>Line 31 — Amount Applied Next Year</h2></div>
+<div class="line"><h2>Line 32 — Tax Owed</h2></div>
+<div class="line"><h2>Line 33 — Balance Due</h2></div>
+
+<div class="line"><h2>Line 34 — Direct Deposit Info</h2></div>
+<div class="line"><h2>Line 35 — Routing Number</h2></div>
+<div class="line"><h2>Line 36 — Account Number</h2></div>
+<div class="line"><h2>Line 37 — Signature & Date</h2></div>
+
+<!-- 📎 SCHEDULES -->
+<div class="schedule">
+  <h2>📎 Schedules (Auto-Fill Zone)</h2>
+  <p>Schedule 1 — Extra income & adjustments</p>
+  <p>Schedule 2 — Additional taxes</p>
+  <p>Schedule 3 — Credits</p>
+</div>
+
+<!-- 🦉 OWL -->
+<div id="owl-avatar">🦉</div>
+
+<script>
+  setInterval(() => {
+    document.getElementById("clock").innerText =
+      new Date().toLocaleString();
+  }, 1000);
+</script>
 
 </body>
 </html>
