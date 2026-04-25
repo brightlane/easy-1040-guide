@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>38-Line 1040 Mastery | Professor Owl 2026 Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #0d1b3e; --gold: #f5c518; --white: #ffffff; --card: #1a2a4a; --red: #ef4444; }
+        body { font-family: 'Nunito', sans-serif; background: var(--navy); color: var(--white); margin: 0; padding: 0; line-height: 1.6; }
+
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        @keyframes popIn { 0%{opacity:0;transform:scale(0.7) translateY(30px)} 100%{opacity:1;transform:scale(1) translateY(0)} }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(180deg, #060e22 0%, #0d1b3e 100%);
+            border-bottom: 4px solid var(--gold);
+            padding: 70px 20px 60px;
+            text-align: center;
+        }
+        .hero-professor {
+            display: block;
+            width: 260px;
+            margin: 0 auto 28px;
+            animation: float 3s infinite ease-in-out, popIn 0.7s ease-out both;
+            filter: drop-shadow(0 16px 48px rgba(245,197,24,0.5));
+        }
+        .bubble {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.25rem;
+            border-radius: 20px;
+            padding: 13px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 24px rgba(245,197,24,0.4);
+            position: relative;
+        }
+        .bubble::after {
+            content: '';
+            position: absolute;
+            top: -17px; left: 50%;
+            transform: translateX(-50%);
+            border: 9px solid transparent;
+            border-bottom-color: var(--gold);
+        }
+        .hero h1 { font-family:'Fredoka One',cursive; color:var(--gold); font-size:3rem; margin:0 0 14px; line-height:1.1; }
+        .hero p.sub { color:#cbd5e1; font-size:1.1rem; max-width:520px; margin:0 auto 36px; }
+        .hero-cta {
+            display: inline-block; background: var(--red); color: #fff;
+            font-family: 'Fredoka One', cursive; font-size: 1.55rem;
+            padding: 18px 48px; border-radius: 50px; text-decoration: none;
+            box-shadow: 0 8px 30px rgba(239,68,68,0.55); transition: transform 0.2s;
+        }
+        .hero-cta:hover { transform: scale(1.04); }
+
+        /* ── sticky mini owl ── */
+        .sticky-owl { position:fixed; left:15px; top:15px; width:90px; z-index:1000; animation:float 3s infinite ease-in-out; }
+
+        /* ── main content ── */
+        .container { max-width:960px; margin:0 auto; padding:40px 20px; }
+
+        /* ── TAX LINE CARD: OWL | LINE# | CONTENT ── */
+        .tax-line {
+            background: var(--card);
+            border-radius: 18px;
+            margin-bottom: 24px;
+            border: 1px solid #2d4263;
+            display: grid;
+            grid-template-columns: 150px 80px 1fr;
+            align-items: stretch;
+            overflow: hidden;
+            transition: border-color 0.3s, background 0.3s;
+            min-height: 150px;
+        }
+        .tax-line:hover { border-color: var(--gold); background: #1e3158; }
+
+        /* LEFT: big owl */
+        .owl-col {
+            background: #111e3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 10px;
+        }
+        .owl-col img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 14px rgba(0,0,0,0.5));
+            animation: float 3s ease-in-out infinite;
+        }
+        .tax-line:nth-child(even)  .owl-col img { animation-delay: 0.6s; }
+        .tax-line:nth-child(3n)    .owl-col img { animation-delay: 1.2s; }
+
+        /* MIDDLE: line number badge */
+        .line-num-col {
+            background: var(--gold);
+            color: var(--navy);
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 800;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 6px;
+            text-align: center;
+            word-break: break-all;
+        }
+
+        /* RIGHT: text */
+        .content-col {
+            padding: 22px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .content-col h3 { margin:0 0 8px; color:var(--gold); font-size:1.2rem; font-family:'Fredoka One',cursive; }
+        .content-col p  { margin:0; font-size:0.96rem; color:#e2e8f0; }
+        .wisdom { margin-top:14px; font-weight:800; font-size:0.82rem; }
+        .wisdom a { color:var(--gold); text-decoration:none; }
+        .wisdom a:hover { text-decoration:underline; }
+
+        .section-break {
+            background: linear-gradient(90deg, var(--gold), #ff9900); color: var(--navy);
+            padding: 15px 25px; font-family: 'Fredoka One', cursive; margin: 50px 0 30px 0;
+            border-radius: 10px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .cta-btn {
+            display: block; background: var(--red); color: white; text-align: center; padding: 30px;
+            border-radius: 60px; text-decoration: none; font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem; margin: 60px 0; box-shadow: 0 10px 40px rgba(239,68,68,0.6);
+        }
+
+        @media (max-width:640px) {
+            .tax-line { grid-template-columns: 90px 56px 1fr; min-height: 110px; }
+            .owl-col img { width:72px; height:72px; }
+            .line-num-col { font-size:0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sticky-owl">
+        <a href="https://is.gd/SRCKpA">
+            <img src="https://brightlane.github.io/how-to-file-taxes/newprofessorowl.png" style="width:100%" alt="Professor Owl">
+        </a>
+    </div>
+
+    <div class="hero">
+        <img
+            src="https://brightlane.github.io/how-to-file-taxes/newprofessorowl.png"
+            class="hero-professor"
+            alt="Professor Owl"
+            onerror="this.outerHTML='<div style=\'font-size:120px;margin-bottom:20px;\'>🦉</div>';"
+        >
+        <div class="bubble">Hoot! I'm Professor Owl — let's get your refund!</div>
+        <h1>Owl's 38-Line Masterclass</h1>
+        <p class="sub">No jargon, just results. I'll walk you through every line of your 1040 and help you keep more of your money.</p>
+        <a href="https://is.gd/SRCKpA" class="hero-cta">Start Filing at E-File.com →</a>
+    </div>
+
+    <div class="container">
+        <div id="tax-content"></div>
+
+        <script>
+            const OWL = "https://brightlane.github.io/how-to-file-taxes/newprofessorowl.png";
+
+            const lines = [
+                {n:"1a", t:"Wages & Salaries",             d:"This is the primary money you earned from your regular job. You will find this number in Box 1 of your W-2 form provided by your employer. Professor Owl says: If you had multiple jobs, add all the 'Box 1' numbers together here!"},
+                {n:"1b", t:"Household Employee Pay",        d:"This line is for money you made working inside someone else's home, like being a nanny or a gardener, if you weren't given a W-2. If you made less than a certain amount, you still have to report it here. The Professor reminds you that even small jobs count toward your total income!"},
+                {n:"1c", t:"Tip Income",                   d:"Did you receive cash tips that weren't included on your paycheck? You must report every dollar of those tips right here so the IRS knows your true earnings. Owl Tip: For 2026, some tips might qualify for new special deductions, so keep your receipts!"},
+                {n:"1d", t:"Medicaid Waiver Payments",     d:"These are special payments for providing care in your own home to someone covered by Medicaid. Most of the time, this money is actually tax-free, but you must list it here to tell the IRS about it. The Professor says: Reporting this correctly can keep your tax bill much lower!"},
+                {n:"1e", t:"Dependent Care Benefits",      d:"This is money your boss gave you to help pay for daycare or babysitting. If your employer gave you more than $5,000, the extra amount might be taxable. Use this line to show the IRS how much help you received for your family."},
+                {n:"1f", t:"Employer Adoption Benefits",   d:"If your company helped you pay for the costs of adopting a child, that money is listed here. For 2026, the maximum benefit has increased, meaning more support for your growing family. Owl Wisdom: Make sure you have your adoption paperwork ready before filling this out!"},
+                {n:"1g", t:"Wages from Form 8919",         d:"This is for workers who were treated like independent contractors but should have been employees. If you didn't get a W-2 but your boss controlled your schedule and tools, you use this line to fix that. The Professor helps you stand up for your rights as a worker!"},
+                {n:"1h", t:"Other Earned Income",          d:"This is a catch-all spot for strike benefits from a union or disability payments received before you reach retirement age. It ensures that every source of money from your labor is accounted for properly. Don't leave this blank if you had unique income sources!"},
+                {n:"1i", t:"Combat Pay Election",          d:"If you served in a combat zone, you can choose to include this pay to increase your Earned Income Credit. While combat pay is usually tax-free, including it here might actually get you a bigger refund. Hoot! Let the Professor help you maximize your military benefits!"},
+                {n:"1z", t:"Total Wages",                  d:"This is the big total of all the 'Job Money' you listed in lines 1a through 1i. Add them up carefully because this number is the foundation of your entire return. The Professor suggests using a calculator to double-check your math!"},
+                {n:"2a", t:"Tax-Exempt Interest",          d:"This is interest you earned that the federal government isn't allowed to tax, like from municipal bonds. Even though it's free money, you still have to let the IRS know you have it. Owl Tip: This won't raise your tax, but it helps the IRS see your full financial picture!"},
+                {n:"2b", t:"Taxable Interest",             d:"This is the interest your regular bank account or savings account paid you during the year. Your bank will send you a Form 1099-INT if you earned more than $10. The Professor says: Even small interest amounts add up to your total income!"},
+                {n:"3a", t:"Qualified Dividends",          d:"These are specific payouts from stocks that are taxed at a special, lower rate. To qualify, you usually have to hold the stock for more than 60 days. The Professor loves these because they save you money compared to regular income!"},
+                {n:"3b", t:"Ordinary Dividends",           d:"This is the total of all stock dividends you received, regardless of how long you held the shares. You will find this total on your year-end brokerage statement or Form 1099-DIV. Check your mail for those 1099 forms starting in February!"},
+                {n:"4a", t:"IRA Distributions",            d:"This shows the total amount of money you took out of your Individual Retirement Account (IRA) this year. Whether it was for a planned retirement or an emergency, the IRS needs the total. Owl Wisdom: Not all of this money will be taxed, so keep reading!"},
+                {n:"4b", t:"Taxable IRA Amount",           d:"This is the part of your IRA withdrawal that you actually have to pay taxes on. If you had a Roth IRA, this might be $0, which is a huge win! The Professor wants to make sure you only pay tax on what you absolutely have to."},
+                {n:"5a", t:"Pensions and Annuities",       d:"This is the total money you received from an old employer's retirement plan or an insurance annuity. Retirement is meant for relaxation, so let's make reporting this easy. Find these totals on Form 1099-R in your mailbox!"},
+                {n:"5b", t:"Taxable Pension Amount",       d:"Just like IRAs, only a portion of your pension might be taxable. Use this line to tell the IRS exactly how much of your retirement check counts as income. The Professor says: Knowing the difference can save you thousands!"},
+                {n:"6a", t:"Social Security Benefits",     d:"This is the total amount of money the Social Security Administration sent you this year. You'll get a Form SSA-1099 showing this total at the end of the year. Owl Tip: Most people don't pay tax on their full social security check!"},
+                {n:"6b", t:"Taxable SS Amount",            d:"This line calculates how much of your Social Security is actually taxed based on your other income. If you don't make much other money, this might be $0! The Professor helps you keep more of your hard-earned benefits."},
+                {n:"7",  t:"Capital Gain or Loss",         d:"Did you sell stocks, Bitcoin, or even your car for a profit? This is where you report the 'gain' (profit) or the 'loss' you took. If you lost money trading, the Professor says you can actually use that loss to lower your tax bill!"},
+                {n:"8",  t:"Other Income",                 d:"This is where we put 'fun' money like gambling winnings from the casino or prizes from a sweepstakes. Even jury duty pay or hobby income goes here on Schedule 1 first. Hoot! Make sure you report your wins so the IRS stays happy!"},
+                {n:"9",  t:"Total Income",                 d:"This is the grand total of every single dollar you earned from every source mentioned above. It is the raw starting point for your tax calculation. The Professor says: Take a deep breath, we're halfway through the income section!"},
+                {n:"10", t:"Adjustments to Income",        d:"These are special 'Subtractions' like student loan interest, educator expenses, or HSA contributions. They are great because you don't have to itemize to get these savings. The Professor calls these the 'Easy Wins' for taxpayers!"},
+                {n:"11", t:"Adjusted Gross Income (AGI)",  d:"This is the most famous number in taxes, often called your 'AGI.' It is your Total Income minus those Easy Win adjustments from Line 10. Owl Wisdom: Your AGI is used to decide if you qualify for many other credits and benefits!"},
+                {n:"12", t:"Standard Deduction",           d:"For 2026, the Professor is happy to report the Single deduction is now $16,100! This is a giant chunk of income you get to ignore for tax purposes. If you are Married, this number doubles to a massive $32,200!"},
+                {n:"13", t:"Business Income Deduction",    d:"If you have a side hustle, a small business, or do freelance work, you might get an extra 20% deduction. This is a special rule to help small business owners keep more of their profits. The Professor says: Your hard work deserves a tax break!"},
+                {n:"14", t:"Total Deductions",             d:"Add lines 12 and 13 to see the total amount of money you are shielding from the IRS. This is your 'Armor' against high taxes. The bigger this number, the less tax you will pay on the next line!"},
+                {n:"15", t:"Taxable Income",               d:"This is what's left after you subtract your Armor (Line 14) from your AGI (Line 11). This is the only money the government actually gets to tax. If this number is $0, the Professor says you've won the tax game!"},
+                {n:"16", t:"The Tax Amount",               d:"This is the actual dollar amount of tax you owe based on the 2026 tax brackets. It's calculated using your Taxable Income from the previous line. Owl Tip: Let a computer do this math for you so you don't make a mistake!"},
+                {n:"19", t:"Child Tax Credit",             d:"For 2026, you get a significant credit for each child under age 17. This isn't just a deduction; it's a direct dollar-for-dollar reduction of your tax bill. Hoot! The Professor knows that raising kids is expensive, and this helps a lot!"},
+                {n:"24", t:"Total Tax",                    d:"This is your final tax bill for the year 2026 after all your basic credits are applied. It represents the total 'Cost' of your federal taxes. The Professor says: Don't worry, we still haven't counted the money you already paid!"},
+                {n:"25a",t:"Federal Tax Withheld",         d:"Open your W-2 and look at Box 2—this is the money you already paid throughout the year! Every time you got a paycheck, you sent a little bit to the IRS. Owl Wisdom: This is your 'Pre-Payment' that leads to your refund!"},
+                {n:"27", t:"Earned Income Credit (EIC)",   d:"This is a special 'Bonus' refund for people who work but don't earn a high income. Even if you owe $0 in tax, the government might send you a check for this credit. The Professor says: This is one of the biggest benefits for working families!"},
+                {n:"33", t:"Total Payments",               d:"This is the sum of all your withholdings and all your refundable credits combined. It is the total amount of 'Money in the IRS Pot' with your name on it. The Professor wants this number to be as big as possible!"},
+                {n:"34", t:"YOUR REFUND",                  d:"Hoot Hoot! If Line 33 is bigger than Line 24, this is the amount the IRS must send back to you. This is your reward for filing your taxes correctly and on time! The Professor says: Direct deposit is the fastest way to get this cash!"},
+                {n:"37", t:"Amount You Owe",               d:"If your payments weren't enough to cover your tax, this is the balance you must pay to the IRS. Don't panic if you owe; just make sure to pay by April 15th to avoid extra fees. The Professor helps you set up a payment plan if you need one!"},
+                {n:"38", t:"Estimated Tax Penalty",        d:"This is a small fee added if you didn't pay enough tax throughout the year. The IRS likes to get their money bit-by-bit rather than all at once in April. Owl Tip: Increase your withholding next year to avoid this hooting penalty!"}
+            ];
+
+            const contentDiv = document.getElementById('tax-content');
+            lines.forEach((item, index) => {
+                if(index===0)  contentDiv.innerHTML += '<div class="section-break">Step 1: Your Income (Money In)</div>';
+                if(index===23) contentDiv.innerHTML += '<div class="section-break">Step 2: Your Deductions (Tax Shields)</div>';
+                if(index===29) contentDiv.innerHTML += '<div class="section-break">Step 3: Credits & Payments (Money Back)</div>';
+                if(index===35) contentDiv.innerHTML += '<div class="section-break">Step 4: The Final Result (Refund or Owe)</div>';
+
+                contentDiv.innerHTML += `
+                    <div class="tax-line">
+                        <div class="owl-col">
+                            <img src="${OWL}" alt="Professor Owl">
+                        </div>
+                        <div class="line-num-col">${item.n}</div>
+                        <div class="content-col">
+                            <h3>${item.t}</h3>
+                            <p>${item.d}</p>
+                            <p class="wisdom">
+                                <a href="https://is.gd/SRCKpA">🦉 Owl Wisdom: Click here to automate Line ${item.n} &rarr;</a>
+                            </p>
+                        </div>
+                    </div>
+                `;
+            });
+        </script>
+
+        <a href="https://is.gd/SRCKpA" class="cta-btn">FINISH ALL 38 LINES AT E-FILE.COM →</a>
+
+        <footer style="text-align:center;padding:60px 20px;border-top:2px dashed var(--gold);">
+            <img src="https://brightlane.github.io/how-to-file-taxes/newprofessorowl.png" style="width:120px;margin-bottom:20px;" alt="Professor Owl">
+            <p><strong>© 2026 Professor Owl's Programmatic SEO Engine</strong></p>
+            <p style="opacity:0.7;font-size:0.9rem;">Official affiliate partner of e-file.com. Standard Deduction 2026: $16,100 Single / $32,200 Joint. Always consult a tax professional.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
