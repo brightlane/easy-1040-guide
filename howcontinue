@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🦉 Professor Owl's Form 1040 Guide — File Your Taxes Like a Pro!</title>
+<meta name="description" content="A fun, beginner-friendly Form 1040 guide with updated 2025 tax-year guidance, accessibility fixes, and mobile-friendly navigation." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0d1b3e;
+    --blue:#1a3a6e;
+    --gold:#f5c518;
+    --amber:#e8a800;
+    --green:#22c55e;
+    --red:#ef4444;
+    --cream:#fffbeb;
+    --light:#d8ebff;
+    --muted:#b8d0ef;
+    --white:#ffffff;
+    --shadow:rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito',sans-serif;
+    background:var(--navy);
+    color:var(--white);
+    min-height:100vh;
+    overflow-x:hidden;
+    line-height:1.5;
+  }
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(ellipse at 20% 20%, #1e3a7a 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, #0f2250 0%, transparent 50%),
+      var(--navy);
+    z-index:-2;
+  }
+  a{color:inherit}
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+    clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+
+  /* Sticky nav */
+  #quick-nav{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(13,27,62,.97);
+    border-bottom:2px solid var(--gold);
+    backdrop-filter:blur(10px);
+    transform:translateY(-100%);
+    transition:transform .25s ease;
+    padding:8px 12px;
+  }
+  #quick-nav.visible{transform:translateY(0)}
+  .nav-inner{
+    max-width:1100px;margin:0 auto;
+    display:flex;align-items:center;gap:8px;
+    overflow-x:auto;white-space:nowrap;
+    scrollbar-width:thin;
+  }
+  .nav-inner span{
+    font-weight:800;color:var(--gold);flex:0 0 auto;padding-right:4px;
+  }
+  .nav-jump{
+    background:rgba(245,197,24,.12);
+    border:1px solid rgba(245,197,24,.35);
+    color:var(--light);
+    font-size:.8rem;font-weight:700;
+    padding:6px 10px;border-radius:20px;
+    cursor:pointer;white-space:nowrap;flex:0 0 auto;
+  }
+
+  /* Disclosure */
+  .promo-disclosure{
+    max-width:900px;margin:14px auto 0;padding:0 16px;
+  }
+  .promo-disclosure .box{
+    background:rgba(245,197,24,.12);
+    border:1px solid rgba(245,197,24,.35);
+    color:#fff4c2;
+    border-radius:12px;
+    padding:10px 14px;
+    font-size:.95rem;
+  }
+
+  /* Ticker */
+  #fact-ticker{
+    background:linear-gradient(90deg,#0a1530,#122b5e,#0a1530);
+    border-bottom:1px solid rgba(245,197,24,.3);
+    padding:8px 0;overflow:hidden;
+  }
+  .ticker-track{
+    display:flex;align-items:center;gap:44px;
+    animation:tickerScroll 42s linear infinite;
+    white-space:nowrap;width:max-content;
+  }
+  #fact-ticker:hover .ticker-track{animation-play-state:paused}
+  .ticker-item{
+    color:#fef3c7;font-size:.95rem;display:flex;gap:8px;align-items:center;
+  }
+  .ticker-sep{color:var(--gold)}
+  @keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+  .hero{text-align:center;padding:44px 16px 18px}
+  .hero-title{
+    font-size:clamp(2rem,5vw,3.5rem);
+    font-weight:800;color:var(--gold);
+    text-shadow:3px 3px 0 var(--navy),0 0 30px rgba(245,197,24,.25);
+    line-height:1.1;margin-bottom:8px;
+  }
+  .hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--light);margin-bottom:14px}
+  .hero-controls{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .master-toggle-btn,.expand-all-btn{
+    background:rgba(245,197,24,.12);
+    border:2px solid var(--gold);
+    color:var(--gold);
+    font-weight:800;
+    padding:8px 16px;border-radius:30px;cursor:pointer;
+  }
+
+  .owl-container{display:flex;justify-content:center;margin:10px auto 18px}
+  .owl-svg{width:170px;height:200px;filter:drop-shadow(0 8px 20px rgba(245,197,24,.25))}
+  .cta-wrap{text-align:center;margin:16px 0 8px}
+  .cta-btn{
+    display:inline-block;
+    background:linear-gradient(135deg,#ff3b3b,#c40000);
+    color:#fff;font-weight:800;
+    padding:14px 30px;border-radius:999px;text-decoration:none;
+    box-shadow:0 4px 18px rgba(255,50,50,.45);
+  }
+
+  .countdown-bar{
+    background:linear-gradient(90deg,#0f2250,#1a3a6e,#0f2250);
+    border:2px solid var(--gold);
+    border-radius:16px;
+    padding:14px 18px;
+    max-width:860px;margin:16px auto 28px;
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;
+  }
+  .cd-item{text-align:center;min-width:120px}
+  .cd-label{font-size:.78rem;color:#aac4e8;display:block}
+  .cd-value{font-size:1.15rem;font-weight:800;color:var(--gold)}
+  .cd-message{color:#fff4c2;font-weight:700}
+
+  .intro-section,.section-header,.lines-container,.part-divider,.infographic-wrap,.timeline-note{
+    max-width:980px;margin:0 auto;padding:0 16px;
+  }
+  .intro-card{
+    background:linear-gradient(135deg,#122b5e,#1e3f7a);
+    border:2px solid var(--gold);
+    border-radius:20px;padding:22px;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+  }
+  .intro-text h2{color:var(--gold);font-size:1.5rem;margin-bottom:8px}
+  .intro-text p{color:var(--light);font-size:1rem}
+
+  .section-header{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:38px auto 14px;
+  }
+  .section-header h2{
+    color:var(--gold);border-bottom:3px solid var(--gold);
+    padding-bottom:6px;font-size:clamp(1.2rem,3vw,1.8rem);flex:1;
+  }
+  .section-header .progress-bar{
+    flex:0 0 180px;height:12px;background:#0f1a37;
+    border-radius:6px;overflow:hidden;margin-left:12px;
+  }
+  .progress-fill{
+    height:100%;background:var(--green);width:0;transition:width .3s ease;
+  }
+  .progress-text{
+    color:#aac4e8;font-size:.85rem;margin-top:6px;
+  }
+
+  .lines-container{display:flex;flex-direction:column;gap:16px;padding-bottom:56px}
+  .line-card{
+    background:linear-gradient(135deg,#122b5e 0%,#1a3a6e 100%);
+    border-left:6px solid var(--gold);
+    border-radius:18px;overflow:hidden;
+    box-shadow:0 4px 20px rgba(0,0,0,.25);
+    opacity:0;transform:translateY(20px);
+    transition:opacity .35s ease,transform .35s ease,box-shadow .2s ease;
+  }
+  .line-card.revealed{opacity:1;transform:translateY(0)}
+  .line-card.green-accent{border-left-color:var(--green)}
+  .line-card.red-accent{border-left-color:var(--red)}
+  .line-card.amber-accent{border-left-color:var(--amber)}
+  .line-card.blue-accent{border-left-color:#60a5fa}
+  .line-card.purple-accent{border-left-color:#a78bfa}
+  .line-header{
+    display:flex;align-items:center;gap:10px;
+    padding:14px 16px;cursor:pointer;user-select:none;
+  }
+  .line-num{
+    background:var(--gold);color:var(--navy);font-weight:800;
+    padding:4px 10px;border-radius:8px;white-space:nowrap;flex-shrink:0;
+  }
+  .line-title{font-size:clamp(.92rem,2.2vw,1.05rem);font-weight:800;flex:1}
+  .line-emoji{font-size:1.15rem;flex-shrink:0}
+  .toggle-btn{
+    width:30px;height:30px;border-radius:50%;
+    border:none;cursor:pointer;background:rgba(255,255,255,.1);
+    color:var(--gold);font-weight:800;flex-shrink:0;
+  }
+  .toggle-btn.open{transform:rotate(180deg);background:rgba(245,197,24,.2)}
+  .line-body{
+    max-height:0;overflow:hidden;padding:0 20px;
+    transition:max-height .35s ease,padding .25s ease;
+    border-top:0 solid rgba(255,255,255,.08);
+  }
+  .line-body.open{
+    max-height:1400px;padding:0 20px 20px;border-top-width:1px;
+  }
+  .line-body-inner{padding-top:14px}
+  .line-explain{color:var(--light);margin-bottom:10px}
+  .highlight-box{
+    background:rgba(245,197,24,.08);
+    border:1px solid rgba(245,197,24,.28);
+    border-radius:10px;padding:10px 14px;margin:10px 0;
+    color:#fff4c2;
+  }
+  .what-you-need,.owl-tip,.warning-tip,.pro-tip{
+    border-radius:14px;padding:12px 16px;margin:10px 0;
+  }
+  .what-you-need{background:rgba(0,0,0,.24)}
+  .what-you-need h4{color:#60a5fa;margin-bottom:8px;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
+  .what-you-need ul{list-style:none}
+  .what-you-need li{padding:3px 0;color:var(--light)}
+  .owl-tip{background:linear-gradient(135deg,#0d2a1a,#0f3822);border:2px solid var(--green)}
+  .warning-tip{background:linear-gradient(135deg,#2d1400,#3d1f00);border:2px solid var(--amber);color:#fde68a}
+  .pro-tip{background:linear-gradient(135deg,#1e1040,#2d1a5e);border:2px solid #a78bfa;color:#ddd6fe}
+
+  .part-divider{margin:46px auto 20px}
+  .part-divider-inner{
+    background:linear-gradient(90deg,var(--gold),var(--amber),var(--gold));
+    border-radius:12px;padding:14px 18px;color:var(--navy);display:flex;align-items:center;gap:14px;
+    font-weight:800;
+  }
+  .part-divider-inner h3{font-size:1.15rem}
+
+  .infographic{
+    background:linear-gradient(135deg,#0d1f4a,#122b5e);
+    border:2px solid rgba(245,197,24,.4);
+    border-radius:20px;padding:24px;text-align:center;
+  }
+  .infographic h3{color:var(--gold);margin-bottom:20px;font-size:1.3rem}
+  .flow-row,.flow-split,.flow-compare{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;align-items:center}
+  .flow-box{
+    background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:14px 16px;min-width:130px;max-width:180px;
+  }
+  .fb-icon{font-size:1.8rem}
+  .fb-label{font-weight:800;color:#aac4e8;margin-top:4px}
+  .fb-val{font-weight:800;color:var(--gold);margin-top:4px}
+  .flow-outcome{
+    flex:1;min-width:220px;max-width:320px;border-radius:16px;padding:16px;text-align:center;
+  }
+  .flow-outcome.refund{background:linear-gradient(135deg,#052e16,#0a3d20);border:2px solid var(--green)}
+  .flow-outcome.owe{background:linear-gradient(135deg,#2d0a0a,#3d1010);border:2px solid var(--red)}
+  .fo-title{font-weight:800;font-size:1.05rem;margin:6px 0}
+  .flow-outcome.refund .fo-title{color:var(--green)}
+  .flow-outcome.owe .fo-title{color:#fca5a5}
+  .fo-desc{font-size:.95rem}
+  .compare-chip{
+    border-radius:999px;padding:7px 14px;font-weight:800;font-size:.9rem
+  }
+  .green-chip{background:rgba(34,197,94,.15);border:1.5px solid var(--green);color:var(--green)}
+  .red-chip{background:rgba(239,68,68,.15);border:1.5px solid var(--red);color:#fca5a5}
+
+  .footer{
+    background:#080f25;text-align:center;padding:36px 16px;border-top:3px solid var(--gold);
+  }
+  .footer p{color:#aac4e8;font-size:.92rem;margin:6px 0}
+  .footer a{color:var(--red)}
+  .back-top{
+    position:fixed;bottom:24px;right:24px;
+    width:50px;height:50px;border-radius:50%;
+    background:var(--gold);color:var(--navy);border:none;
+    font-weight:800;display:none;align-items:center;justify-content:center;
+    box-shadow:0 4px 16px rgba(245,197,24,.45);z-index:999;
+  }
+  .back-top.show{display:flex}
+
+  .schedule-note{
+    background:rgba(96,165,250,.12);border:1px solid rgba(96
+
+  .schedule-note{
+    background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.3);
+    padding:10px 14px;border-radius:10px;color:#dbeafe;margin-top:10px;
+  }
+
+  @media (max-width: 700px){
+    .hero{padding-top:34px}
+    .nav-inner{justify-content:flex-start}
+    .line-emoji{display:none}
+    .intro-card{padding:18px}
+    .countdown-bar{padding:12px}
+    .cd-item{min-width:100px}
+
+    /* use horizontal scroll only on mobile nav */
+    .nav-inner{
+      padding-right:12px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<nav id="quick-nav" aria-label="Quick jump navigation">
+  <div class="nav-inner">
+    <span>Jumps</span>
+    <button class="nav-jump" onclick="jumpTo('part1-anchor')">Personal Info</button>
+    <button class="nav-jump" onclick="jumpTo('part2-anchor')">Income</button>
+    <button class="nav-jump" onclick="jumpTo('part3-anchor')">Adjustments</button>
+    <button class="nav-jump" onclick="jumpTo('part4-anchor')">Credits</button>
+    <button class="nav-jump" onclick="jumpTo('part5-anchor')">Payments</button>
+    <button class="nav-jump" onclick="jumpTo('part6-anchor')">Refund/Owe</button>
+    <button class="nav-jump" onclick="jumpTo('part7-anchor')">Schedule C</button>
+    <button class="nav-jump" onclick="jumpTo('part8-anchor')">Amended Returns</button>
+    <button class="nav-jump" onclick="jumpTo('part9-anchor')">Sign & File</button>
+  </div>
+</nav>
+
+<div id="fact-ticker" aria-label="Tax facts ticker">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<header class="hero">
+  <div class="hero-title">Professor Owl's Form 1040 Guide</div>
+  <div class="hero-sub">A friendly, beginner-focused walk-through for first-time filers</div>
+
+  <div class="hero-controls">
+    <button class="master-toggle-btn" id="master-btn" onclick="masterToggle()">⊕ Expand All Sections</button>
+  </div>
+
+  <div class="owl-container" aria-hidden="true">
+    <!-- simplified owl -->
+    <svg class="owl-svg" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="90" cy="50" rx="58" ry="48" fill="#8b5e3c"/>
+      <ellipse cx="90" cy="150" rx="58" ry="68" fill="#8b5e3c"/>
+      <ellipse cx="90" cy="155" rx="34" ry="46" fill="#c9935a"/>
+      <circle cx="72" cy="90" r="16" fill="#fff"/>
+      <circle cx="108" cy="90" r="16" fill="#fff"/>
+      <circle cx="72" cy="90" r="11" fill="#f5c518"/>
+      <circle cx="108" cy="90" r="11" fill="#f5c518"/>
+      <circle cx="74" cy="90" r="6.5" fill="#111"/>
+      <circle cx="110" cy="90" r="6.5" fill="#111"/>
+      <polygon points="90,98 82,110 98,110" fill="#e8a800"/>
+    </svg>
+  </div>
+
+  <div class="cta-wrap">
+    <a href="https://is.gd/SRCKpA" class="cta-btn" target="_blank" rel="sponsored nofollow noopener">File Your Taxes Online</a>
+  </div>
+
+  <div class="promo-disclosure">
+    <div class="box">
+      Disclosure: this page contains an affiliate/sponsored link. If you use it, the site may earn a commission at no extra cost to you.
+    </div>
+  </div>
+
+  <div class="countdown-bar">
+    <div class="cd-item">
+      <span class="cd-label">Today</span>
+      <span class="cd-value" id="today-date"></span>
+    </div>
+    <div class="cd-item">
+      <span class="cd-label">Tax Deadline Apr 15</span>
+      <span class="cd-value" id="deadline-clock"></span>
+    </div>
+    <div class="cd-item">
+      <span class="cd-label">Extension Oct 15</span>
+      <span class="cd-value" id="extension-clock"></span>
+    </div>
+  </div>
+</header>
+
+<section class="intro-section">
+  <div class="intro-card">
+    <div class="intro-text">
+      <h2>Hoot hoot! Welcome, first-time filer!</h2>
+      <p>I'm Professor Owl, your guide through Form 1040. Click any section below to expand it and learn what matters most, line by line. This version reflects the 2025 tax year, adds Schedule C and amended-return guidance, and improves accessibility and mobile usability.</p>
+    </div>
+  </div>
+</section>
+
+<div class="timeline-note" style="margin-top:10px;">
+  <div class="schedule-note">
+    If you already filed and found a mistake, a Form 1040‑X amended return is the usual fix. If you worked for yourself, freelance, or had side gigs, Schedule C is often the key extra form.
+  </div>
+</div>
+
+<div class="section-header" id="part1-anchor">
+  <h2>Part 1 — Personal Information</h2>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+  <span class="progress-text" id="progress-text">0 of 0 sections reviewed (0%)</span>
+  <button class="expand-all-btn" onclick="expandSection('part1')">Expand All ↓</button>
+</div>
+<div class="lines-container" id="part1">
+  <div class="line-card green-accent" data-line="1">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Name / Address</span>
+      <span class="line-title">Your Full Name, Address, and SSN</span>
+      <span class="line-emoji">🪪</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">Enter your legal name, current mailing address, and SSN or ITIN exactly as they appear on official records.</p>
+      </div>
+    </div>
+  </div>
+  <div class="line-card blue-accent" data-line="2">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Filing Status</span>
+      <span class="line-title">Choose One Filing Status</span>
+      <span class="line-emoji">📌</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">Pick the status that matches your situation: Single, Married Filing Jointly, Married Filing Separately, Head of Household, or Qualifying Surviving Spouse.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" id="part2-anchor">
+  <h2>Part 2 — Income</h2>
+  <button class="expand-all-btn" onclick="expandSection('part2')">Expand All ↓</button>
+</div>
+<div class="lines-container" id="part2">
+  <div class="line-card green-accent" data-line="3">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Line 1a</span>
+      <span class="line-title">Wages, Salaries, and Tips</span>
+      <span class="line-emoji">💼</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">Use Box 1 from your W‑2 forms and add all W‑2 wage amounts together.</p>
+      </div>
+    </div>
+  </div>
+  <div class="line-card amber-accent" data-line="4">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Line 8</span>
+      <span class="line-title">Other Income, Including Freelance</span>
+      <span class="line-emoji">🧾</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">Use this catch‑all line for income that doesn’t fit elsewhere, including some freelance, gig, and crypto‑related items.</p>
+        <div class="schedule-note">
+          Freelance or self‑employment income usually belongs on Schedule C first, then flows through Schedule 1 to Form 1040.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" id="part3-anchor">
+  <h2>Part 3 — Adjustments</h2>
+  <button class="expand-all-btn" onclick="expandSection('part3')">Expand All ↓</button>
+</div>
+<div class="lines-container" id="part3">
+  <div class="line-card amber-accent" data-line="5">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Line 12</span>
+      <span class="line-title">Standard Deduction or Itemized Deductions</span>
+      <span class="line-emoji">🧮</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">For 2025, the standard deduction is $15,750 (single/MFS), $31,500 (MFJ/QSS), and $23,625 (HOH).</p>
+      </div>
+    </div>
+  </div>
+  <div class="line-card blue-accent" data-line="6">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Line 13</span>
+      <span class="line-title">Qualified Business Income Deduction</span>
+      <span class="line-emoji">🏪</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">If you are self‑employed or run a pass‑through business, you may qualify for a QBI deduction.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" id="part4-anchor">
+  <h2>Part 4 — Credits</h2>
+  <button class="expand-all-btn" onclick="expandSection('part4')">Expand All ↓</button>
+</div>
+<div class="lines-container" id="part4">
+  <div class="line-card green-accent" data-line="7">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Credits</span>
+      <span class="line-title">Child Tax Credit and Other Credits</span>
+      <span class="line-emoji">👨‍👩‍👧‍👦</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">Credits reduce your tax directly, so they can be more valuable than deductions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" id="part5-anchor">
+  <h2>Part 5 — Payments</h2>
+  <button class="expand-all-btn" onclick="expandSection('part5')">Expand All ↓</button>
+</div>
+<div class="lines-container" id="part5">
+  <div class="line-card green-accent" data-line="8">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Line 25–33</span>
+      <span class="line-title">Withholding, Estimated Tax, and Refundable Credits</span>
+      <span class="line-emoji">💰</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">Add up your federal withholding, estimated tax payments, and refundable credits to get your total payments.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="part-divider" id="part6-anchor">
+  <div class="part-divider-inner">
+    <span>🎉</span>
+    <h3>Refund or Balance Due</h3>
+  </div>
+</div>
+
+<div class="infographic-wrap">
+  <div class="infographic">
+    <h3>How the IRS Determines Your Outcome</h3>
+    <div class="flow-row">
+      <div class="flow-box">
+        <div class="fb-icon">💵</div>
+        <div class="fb-label">Total Tax</div>
+        <div class="fb-val">Line 24</div>
+      </div>
+      <div>vs</div>
+      <div class="flow-box">
+        <div class="fb-icon">💳</div>
+        <div class="fb-label">Total Payments</div>
+        <div class="fb-val">Line 33</div>
+      </div>
+    </div>
+    <div class="flow-compare" style="margin-top:14px">
+      <div class="compare-chip green-chip">Line 33 > Line 24</div>
+      <div class="compare-chip red-chip">Line 24 > Line 33</div>
+    </div>
+    <div class="flow-split" style="margin-top:16px">
+      <div class="flow-outcome refund">
+        <div class="fo-title">You Get a Refund</div>
+        <div class="fo-desc">The IRS sends the difference back to you, usually fastest by direct deposit.</div>
+      </div>
+      <div class="flow-outcome owe">
+        <div class="fo-title">You Owe the IRS</div>
+        <div class="fo-desc">File on time even if you can’t pay right away. That helps avoid bigger penalties.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" id="part7-anchor">
+  <h2>Part 7 — Schedule C</h2>
+  <button class="expand-all-btn" onclick="expandSection('part7')">Expand All ↓</button>
+</div>
+<div class="lines-container" id="part7">
+  <div class="line-card purple-accent" data-line="9">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Schedule C</span>
+      <span class="line-title">Freelance, Gig Work, and Self‑Employment</span>
+      <span class="line-emoji">🧰</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">If you worked for yourself, sold services, or had side‑hustle income, Schedule C usually reports your business income and expenses.</p>
+        <div class="what-you-need">
+          <h4>Common items</h4>
+          <ul>
+            <li>1099‑NEC or 1099‑K forms</li>
+            <li>Business income records</li>
+            <li>Expense receipts, mileage, and home‑office records if applicable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" id="part8-anchor">
+  <h2>Part 8 — Amended Returns</h2>
+  <button class="expand-all-btn" onclick="expandSection('part8')">Expand All ↓</button>
+</div>
+<div class="lines-container" id="part8">
+  <div class="line-card red-accent" data-line="10">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Form 1040‑X</span>
+      <span class="line-title">What To Do If You Made a Mistake</span>
+      <span class="line-emoji">🛠️</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">If you already filed and found an error, Form 1040‑X is
+        <div class="warning-tip">
+          Amend only when you need to correct a real mistake or change something significant. Keep copies of the original return and all supporting documents.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-header" id="part9-anchor">
+  <h2>Part 9 — Sign and File</h2>
+  <button class="expand-all-btn" onclick="expandSection('part9')">Expand All ↓</button>
+</div>
+<div class="lines-container" id="part9">
+  <div class="line-card green-accent" data-line="11">
+    <div class="line-header" onclick="toggleCard(this)">
+      <span class="line-num">Sign</span>
+      <span class="line-title">Sign, Date, and File Your Return</span>
+      <span class="line-emoji">✍️</span>
+      <button class="toggle-btn" aria-expanded="false">▼</button>
+    </div>
+    <div class="line-body">
+      <div class="line-body-inner">
+        <p class="line-explain">Sign and date your return, then e‑file or mail it before the deadline. If you owe tax and can’t pay, file anyway and arrange payment separately.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Disclosure: the <strong>File Your Taxes Online</strong> button above is an affiliate/sponsored link.</p>
+  <p>Educational content only. Tax law changes, and this guide is not a substitute for professional tax advice.</p>
+  <p>&copy; 2026 Professor Owl Guide</p>
+</footer>
+
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const facts = [
+  { icon:"🦉", text:"The IRS processes hundreds of millions of returns each year." },
+  { icon:"📅", text:"April 15 remains the standard federal filing deadline." },
+  { icon:"💼", text:"Self‑employment income usually needs Schedule C." },
+  { icon:"🧾", text:"Form 1040‑X is used to amend a filed return." },
+  { icon:"🏦", text:"Direct deposit is usually the fastest way to get a refund." },
+  { icon:"🔒", text:"E‑filing can reduce processing errors and speed refunds." }
+];
+function buildTicker(){
+  const track = document.getElementById('ticker-track');
+  track.innerHTML = [...facts, ...facts].map(f =>
+    `<span class="ticker-item"><span>${f.icon}</span>${f.text}</span><span class="ticker-sep">✦</span>`
+  ).join('');
+}
+buildTicker();
+
+function pad(n){ return n < 10 ? '0' + n : '' + n; }
+function updateClocks(){
+  const now = new Date();
+  document.getElementById('today-date').textContent = now.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+
+  function nextDeadline(month, day){
+    let target = new Date(now.getFullYear(), month, day, 23, 59, 59);
+    if (now >= target) target = new Date(now.getFullYear() + 1, month, day, 23, 59, 59);
+    return target;
+  }
+
+  const deadline = nextDeadline(3, 15);
+  const extension = nextDeadline(9, 15);
+
+  function fmt(target, passedLabel, activeLabel){
+    const ms = target - now;
+    if (ms <= 0) return passedLabel;
+    const d = Math.floor(ms / 86400000);
+    const h = Math.floor((ms % 86400000) / 3600000);
+    const m = Math.floor((ms % 3600000) / 60000);
+    const s = Math.floor((ms % 60000) / 1000);
+    return `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+  }
+
+  document.getElementById('deadline-clock').textContent =
+    now > new Date(now.getFullYear(), 3, 15, 23, 59, 59)
+      ? 'Filing for the current tax year is closed'
+      : fmt(deadline, 'Filing for the current tax year is closed', 'countdown');
+
+  document.getElementById('extension-clock').textContent =
+    now > new Date(now.getFullYear(), 9, 15, 23, 59, 59)
+      ? 'Extension window is closed'
+      : fmt(extension, 'Extension window is closed', 'countdown');
+}
+updateClocks();
+setInterval(updateClocks, 1000);
+
+const quickNav = document.getElementById('quick-nav');
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  quickNav.classList.toggle('visible', window.scrollY > 260);
+  backTop.classList.toggle('show', window.scrollY > 420);
+});
+
+function jumpTo(id){
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+const opened = new Set();
+const TOTAL_LINES = document.querySelectorAll('.line-card').length;
+let allExpanded = false;
+
+function toggleCard(header){
+  const card = header.closest('.line-card');
+  const body = card.querySelector('.line-body');
+  const btn = card.querySelector('.toggle-btn');
+  const lineKey = card.dataset.line || card.querySelector('.line-num')?.textContent || card.id;
+
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+
+  if (!isOpen) opened.add(lineKey);
+  updateProgress();
+}
+
+function expandSection(id){
+  const section = document.getElementById(id);
+  section.querySelectorAll('.line-card').forEach(card => {
+    const body = card.querySelector('.line-body');
+    const btn = card.querySelector('.toggle-btn');
+    const lineKey = card.dataset.line || card.querySelector('.line-num')?.textContent || card.id;
+    body.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    opened.add(lineKey);
+  });
+  updateProgress();
+}
+
+function masterToggle(){
+  allExpanded = !allExpanded;
+  document.querySelectorAll('.line-card').forEach(card => {
+    const body = card.querySelector('.line-body');
+    const btn = card.querySelector('.toggle-btn');
+    const lineKey = card.dataset.line || card.querySelector('.line-num')?.textContent || card.id;
+    if (allExpanded){
+      body.classList.add('open');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      opened.add(lineKey);
+    } else {
+      body.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+  if (!allExpanded) opened.clear();
+  document.getElementById('master-btn').textContent =
+    allExpanded ? '⊖ Collapse All Sections' : '⊕ Expand All Sections';
+  updateProgress();
+}
+
+function updateProgress(){
+  const pct = TOTAL_LINES ? Math.round((opened.size / TOTAL_LINES) * 100) : 0;
+  const bar = document.getElementById('progress-fill');
+  const text = document.getElementById('progress-text');
+  if (bar) bar.style.width = pct + '%';
+  if (text) text.textContent = `${opened.size} of ${TOTAL_LINES} sections reviewed (${pct}%)`;
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.line-card').forEach(card => observer.observe(card));
+document.querySelectorAll('.toggle-btn').forEach(btn => btn.setAttribute('aria-expanded','false'));
+</script>
+
+</body>
+</html>
